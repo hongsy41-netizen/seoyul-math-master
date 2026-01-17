@@ -645,7 +645,7 @@ T11.push({
   }
 });
 
-// 일차방정식의 활용 (난이도3)
+// 일차방정식의 활용 (난이도3) - 두 수 문제
 T11.push({
   key:'word_problem_hard',
   unitId:'m1-1-1-III-5',
@@ -666,6 +666,521 @@ T11.push({
       unitLabel:'',
       hint:'작은 수를 x라 하면, 큰 수는 x+${diff}입니다. x + (x+${diff}) = ${total}',
       explain:`2x + ${diff} = ${total}, 2x = ${total-diff}, x = ${small}`
+    };
+  }
+});
+
+// 거리/속력/시간 (난이도3)
+T11.push({
+  key:'distance_speed_time',
+  unitId:'m1-1-1-III-5',
+  difficulty: 3,
+  tags:['활용','거리속력시간'],
+  gen(){
+    const {randInt, choice} = GenCore;
+    const scenarios = [
+      // 따라잡기
+      () => {
+        const speed1 = randInt(3,5);
+        const speed2 = speed1 + randInt(1,3);
+        const delay = choice([1,2]);
+        const distance = speed1 * delay;
+        const time = distance / (speed2 - speed1);
+        return {
+          question: `형은 시속 ${speed1}km로 먼저 출발하고, ${delay}시간 후에 동생이 시속 ${speed2}km로 같은 길을 따라갔습니다. 동생이 형을 따라잡는 데 걸린 시간은?`,
+          answer: String(time),
+          unitLabel: '시간',
+          hint: '형이 간 거리 = 동생이 간 거리',
+          explain: `형: ${speed1}(x+${delay}), 동생: ${speed2}x, ${speed1}(x+${delay})=${speed2}x, x=${time}시간`
+        };
+      },
+      // 맞은편에서 출발
+      () => {
+        const speed1 = randInt(40,60);
+        const speed2 = randInt(40,60);
+        const distance = randInt(200,400);
+        const time = distance / (speed1 + speed2);
+        return {
+          question: `${distance}km 떨어진 두 지점에서 A는 시속 ${speed1}km, B는 시속 ${speed2}km로 동시에 출발했습니다. 만나는 데 걸린 시간은?`,
+          answer: String(time.toFixed(1)),
+          unitLabel: '시간',
+          hint: 'A가 간 거리 + B가 간 거리 = 전체 거리',
+          explain: `${speed1}x + ${speed2}x = ${distance}, x = ${time.toFixed(1)}시간`
+        };
+      },
+      // 정거장 왕복
+      () => {
+        const speed = randInt(8,15);
+        const distance = randInt(20,50);
+        const roundTime = (distance / speed) * 2;
+        return {
+          question: `시속 ${speed}km로 ${distance}km 떨어진 정거장을 왕복하는 데 걸린 시간은?`,
+          answer: String(roundTime.toFixed(1)),
+          unitLabel: '시간',
+          hint: '왕복 거리는 거리의 2배',
+          explain: `${distance}×2 ÷ ${speed} = ${roundTime.toFixed(1)}시간`
+        };
+      }
+    ];
+    const picked = choice(scenarios)();
+    return {
+      type:'short',
+      question: picked.question,
+      answer: picked.answer,
+      answerType:'number',
+      tolerance:0.1,
+      unitLabel: picked.unitLabel,
+      hint: picked.hint,
+      explain: picked.explain
+    };
+  }
+});
+
+// 과부족 문제 (난이도3)
+T11.push({
+  key:'shortage_surplus',
+  unitId:'m1-1-1-III-5',
+  difficulty: 3,
+  tags:['활용','과부족'],
+  gen(){
+    const {randInt, choice} = GenCore;
+    const scenarios = [
+      // 사탕 나눠주기
+      () => {
+        const students = randInt(15,30);
+        const per1 = randInt(5,8);
+        const per2 = per1 + randInt(2,4);
+        const surplus = randInt(5,15);
+        const shortage = randInt(5,15);
+        const total = students * per1 + surplus;
+        return {
+          question: `학생들에게 사탕을 ${per1}개씩 나눠주면 ${surplus}개가 남고, ${per2}개씩 나눠주면 ${shortage}개가 부족합니다. 사탕은 몇 개입니까?`,
+          answer: String(total),
+          unitLabel: '개',
+          hint: '학생 수를 x라 하고 두 경우의 사탕 개수가 같다는 식을 세우세요',
+          explain: `${per1}x+${surplus}=${per2}x-${shortage}, x=${students}, 사탕=${total}개`
+        };
+      },
+      // 초콜릿 봉지
+      () => {
+        const bags = randInt(10,20);
+        const per1 = randInt(5,8);
+        const per2 = per1 + randInt(2,4);
+        const surplus = randInt(3,10);
+        const lack = randInt(2,8);
+        const total = bags * per1 + surplus;
+        return {
+          question: `초콜릿을 봉지에 담는데 ${per1}개씩 담으면 ${surplus}개가 남고, ${per2}개씩 담으면 마지막 봉지에 ${lack}개가 부족합니다. 초콜릿은 몇 개입니까?`,
+          answer: String(total),
+          unitLabel: '개',
+          hint: '봉지 수를 x라 하고 초콜릿 개수가 같다는 식을 세우세요',
+          explain: `${per1}x+${surplus}=${per2}(x-1)+${per2-lack}, x=${bags}, 초콜릿=${total}개`
+        };
+      }
+    ];
+    const picked = choice(scenarios)();
+    return {
+      type:'short',
+      question: picked.question,
+      answer: picked.answer,
+      answerType:'number',
+      tolerance:0,
+      unitLabel: picked.unitLabel,
+      hint: picked.hint,
+      explain: picked.explain
+    };
+  }
+});
+
+// 소금물 농도 (난이도3)
+T11.push({
+  key:'salt_concentration',
+  unitId:'m1-1-1-III-5',
+  difficulty: 3,
+  tags:['활용','농도'],
+  gen(){
+    const {randInt, choice} = GenCore;
+    const scenarios = [
+      // 물 증발
+      () => {
+        const originalPercent = randInt(5,12);
+        const originalAmount = choice([200,300,400,500]);
+        const finalPercent = originalPercent + randInt(3,8);
+        const salt = originalAmount * originalPercent / 100;
+        const finalAmount = salt * 100 / finalPercent;
+        const evaporated = originalAmount - finalAmount;
+        return {
+          question: `${originalPercent}% 소금물 ${originalAmount}g에서 물을 증발시켜 ${finalPercent}% 소금물을 만들었습니다. 증발시킨 물의 양은?`,
+          answer: String(Math.round(evaporated)),
+          unitLabel: 'g',
+          hint: '소금의 양은 변하지 않습니다',
+          explain: `소금: ${salt}g, ${salt}÷${finalPercent}×100=${Math.round(finalAmount)}g, 증발: ${Math.round(evaporated)}g`
+        };
+      },
+      // 물 추가
+      () => {
+        const originalPercent = randInt(10,20);
+        const originalAmount = choice([100,200,300]);
+        const finalPercent = originalPercent - randInt(3,6);
+        const salt = originalAmount * originalPercent / 100;
+        const finalAmount = salt * 100 / finalPercent;
+        const added = finalAmount - originalAmount;
+        return {
+          question: `${originalPercent}% 소금물 ${originalAmount}g에 물을 넣어 ${finalPercent}% 소금물을 만들었습니다. 넣은 물의 양은?`,
+          answer: String(Math.round(added)),
+          unitLabel: 'g',
+          hint: '소금의 양은 변하지 않습니다',
+          explain: `소금: ${salt}g, ${salt}÷${finalPercent}×100=${Math.round(finalAmount)}g, 물: ${Math.round(added)}g`
+        };
+      },
+      // 두 소금물 섞기
+      () => {
+        const percent1 = randInt(5,10);
+        const amount1 = choice([100,200,300]);
+        const percent2 = randInt(12,18);
+        const amountX = randInt(100,300);
+        const salt1 = amount1 * percent1 / 100;
+        const salt2 = amountX * percent2 / 100;
+        const finalPercent = Math.round((salt1 + salt2) / (amount1 + amountX) * 100);
+        return {
+          question: `${percent1}% 소금물 ${amount1}g과 ${percent2}% 소금물을 섞어 ${finalPercent}% 소금물을 만들었습니다. ${percent2}% 소금물의 양은?`,
+          answer: String(amountX),
+          unitLabel: 'g',
+          hint: '섞은 후 전체 소금 양 = 각각의 소금 양의 합',
+          explain: `${percent1/100}×${amount1}+${percent2/100}×x=${finalPercent/100}×(${amount1}+x), x=${amountX}g`
+        };
+      }
+    ];
+    const picked = choice(scenarios)();
+    return {
+      type:'short',
+      question: picked.question,
+      answer: picked.answer,
+      answerType:'number',
+      tolerance:1,
+      unitLabel: picked.unitLabel,
+      hint: picked.hint,
+      explain: picked.explain
+    };
+  }
+});
+
+// 정수와 유리수 (난이도3) - 복합 계산
+T11.push({
+  key:'integer_complex_hard',
+  unitId:'m1-1-1-II-2',
+  difficulty: 3,
+  tags:['정수','복합계산'],
+  gen(){
+    const {randInt} = GenCore;
+    const a = randInt(-10,10);
+    const b = randInt(-10,10);
+    const c = randInt(-10,10);
+    const d = randInt(2,9);
+    const ans = ((a + b) * c) - d;
+    return {
+      type:'short',
+      question: `(${a} + (${b})) × (${c}) - ${d} = ?`,
+      answer: String(ans),
+      answerType:'number',
+      tolerance:0,
+      unitLabel:'',
+      hint: '괄호 안을 먼저 계산하고, 곱셈을 한 후 뺄셈을 합니다.',
+      explain:`(${a}+${b})×${c}-${d} = ${a+b}×${c}-${d} = ${(a+b)*c}-${d} = ${ans}`
+    };
+  }
+});
+
+// 문자의 사용 (난이도3) - 복잡한 식
+T11.push({
+  key:'variable_complex',
+  unitId:'m1-1-1-III-1',
+  difficulty: 3,
+  tags:['문자','복잡한식'],
+  gen(){
+    const {randInt} = GenCore;
+    const a = randInt(2,6);
+    const b = randInt(2,6);
+    const c = randInt(2,6);
+    const x = randInt(2,5);
+    const ans = a*x*x + b*x + c;
+    return {
+      type:'short',
+      question: `x가 ${x}일 때, ${a}x² + ${b}x + ${c}의 값은?`,
+      answer: String(ans),
+      answerType:'number',
+      tolerance:0,
+      unitLabel:'',
+      hint: '거듭제곱을 먼저 계산하고, 곱셈 후 덧셈을 합니다.',
+      explain:`${a}×${x}×${x} + ${b}×${x} + ${c} = ${a*x*x} + ${b*x} + ${c} = ${ans}`
+    };
+  }
+});
+
+// 일차식의 계산 (난이도3) - 복잡한 식
+T11.push({
+  key:'linear_expression_complex',
+  unitId:'m1-1-1-III-2',
+  difficulty: 3,
+  tags:['일차식','괄호풀기'],
+  gen(){
+    const {randInt} = GenCore;
+    const a = randInt(2,5);
+    const b = randInt(2,5);
+    const c = randInt(2,5);
+    const d = randInt(2,5);
+    const ansX = a - b;
+    const ansC = a*c - b*d;
+    return {
+      type:'short',
+      question: `${a}(x + ${c}) - ${b}(x + ${d})를 간단히 하시오.`,
+      answer: `${ansX}x${ansC>=0?'+':''}${ansC}`,
+      answerType:'string',
+      tolerance:0,
+      unitLabel:'',
+      hint: '분배법칙으로 괄호를 풀고 동류항끼리 정리하세요.',
+      explain:`${a}x+${a*c}-${b}x-${b*d} = ${ansX}x${ansC>=0?'+':''}${ansC}`
+    };
+  }
+});
+
+// 방정식의 해 (난이도3)
+T11.push({
+  key:'equation_solution_hard',
+  unitId:'m1-1-1-III-3',
+  difficulty: 3,
+  tags:['방정식','해','미지수'],
+  gen(){
+    const {randInt} = GenCore;
+    const x = randInt(-5,8);
+    const a = randInt(2,6);
+    const b = randInt(2,6);
+    const c = a*x + b;
+    const d = randInt(2,5);
+    return {
+      type:'short',
+      question: `x = ${x}이 방정식 ${a}x + ${b} = c의 해이고, c = dy일 때 y의 값은? (단, d = ${d})`,
+      answer: String(Math.round(c/d)),
+      answerType:'number',
+      tolerance:0,
+      unitLabel:'',
+      hint: '먼저 x를 대입하여 c를 구한 후, c = dy에서 y를 구하세요.',
+      explain:`c = ${a}×${x}+${b} = ${c}, y = ${c}÷${d} = ${Math.round(c/d)}`
+    };
+  }
+});
+
+// 거리/속력/시간 문제 (난이도3)
+T11.push({
+  key:'distance_speed_time_hard',
+  unitId:'m1-1-1-III-5',
+  difficulty: 3,
+  tags:['활용','거리속력시간'],
+  gen(){
+    const {randInt} = GenCore;
+    const speed1 = randInt(40,80);
+    const speed2 = randInt(50,90);
+    const distance = randInt(200,400);
+    const time = distance / speed1;
+    return {
+      type:'short',
+      question: `A는 시속 ${speed1}km로, B는 시속 ${speed2}km로 같은 출발점에서 같은 방향으로 출발했습니다. A가 ${distance}km를 갔을 때, B와의 거리는 몇 km입니까?`,
+      answer: String(Math.abs(speed2*time - distance)),
+      answerType:'number',
+      tolerance:1,
+      unitLabel:'km',
+      hint: 'A가 걸린 시간을 구한 후, 그 시간동안 B가 간 거리를 계산하세요.',
+      explain:`시간 = ${distance}÷${speed1} = ${time.toFixed(1)}시간, B의 거리 = ${speed2}×${time.toFixed(1)} = ${(speed2*time).toFixed(1)}km, 차이 = ${Math.abs(speed2*time - distance).toFixed(1)}km`
+    };
+  }
+});
+
+// 의자 배치 문제 (난이도3)
+T11.push({
+  key:'chair_shortage_problem',
+  unitId:'m1-1-1-III-5',
+  difficulty: 3,
+  tags:['활용','과부족'],
+  gen(){
+    const {randInt} = GenCore;
+    const rows = randInt(8,15);
+    const short = randInt(2,5);
+    const over = randInt(3,7);
+    // rows줄에 x개씩 놓으면 short개 부족, (x+1)개씩 놓으면 over개 남음
+    // rows*x = total - (-short)
+    // rows*(x+1) = total - over
+    // rows*x + short = rows*x + rows - over
+    // short = rows - over
+    // total = rows*x + short
+    const chairsPerRow = (short + over + rows) / rows;
+    const totalChairs = rows * chairsPerRow - short;
+    return {
+      type:'short',
+      question: `의자를 ${rows}줄에 같은 개수씩 놓으려고 합니다. 한 줄에 x개씩 놓으면 ${short}개가 부족하고, (x+1)개씩 놓으면 ${over}개가 남습니다. 의자는 모두 몇 개입니까?`,
+      answer: String(Math.round(totalChairs)),
+      answerType:'number',
+      tolerance:0,
+      unitLabel:'개',
+      hint: '두 경우 모두 의자 개수는 같습니다. 방정식을 세워 x를 구한 후 전체 의자 개수를 계산하세요.',
+      explain:`${rows}x - ${short} = ${rows}(x+1) + ${over}, ${rows}x - ${short} = ${rows}x + ${rows} + ${over}, -${short} = ${rows} + ${over}, 의자 = ${Math.round(totalChairs)}개`
+    };
+  }
+});
+
+// 소금물 농도 문제 (난이도3)
+T11.push({
+  key:'saltwater_concentration',
+  unitId:'m1-1-1-III-5',
+  difficulty: 3,
+  tags:['활용','농도'],
+  gen(){
+    const {randInt} = GenCore;
+    const percent1 = randInt(5,15);
+    const percent2 = randInt(15,25);
+    const weight1 = randInt(100,300);
+    const weight2 = randInt(100,300);
+    const salt1 = weight1 * percent1 / 100;
+    const salt2 = weight2 * percent2 / 100;
+    const totalSalt = salt1 + salt2;
+    const totalWeight = weight1 + weight2;
+    const finalPercent = (totalSalt / totalWeight * 100).toFixed(1);
+    return {
+      type:'short',
+      question: `${percent1}% 소금물 ${weight1}g과 ${percent2}% 소금물 ${weight2}g을 섞으면 몇 % 소금물이 됩니까?`,
+      answer: String(finalPercent),
+      answerType:'number',
+      tolerance:0.5,
+      unitLabel:'%',
+      hint: '각 소금물의 소금 양을 구한 후, 전체 소금 양 ÷ 전체 물 양 × 100',
+      explain:`소금 = ${salt1.toFixed(1)}g + ${salt2.toFixed(1)}g = ${totalSalt.toFixed(1)}g, 농도 = ${totalSalt.toFixed(1)}÷${totalWeight}×100 = ${finalPercent}%`
+    };
+  }
+});
+
+// 나이 문제 (난이도3)
+T11.push({
+  key:'age_problem_hard',
+  unitId:'m1-1-1-III-5',
+  difficulty: 3,
+  tags:['활용','나이'],
+  gen(){
+    const {randInt} = GenCore;
+    const currentChild = randInt(8,15);
+    const currentParent = randInt(35,50);
+    const yearsAgo = randInt(3,8);
+    const pastChild = currentChild - yearsAgo;
+    const pastParent = currentParent - yearsAgo;
+    const ratio = Math.round(pastParent / pastChild);
+    return {
+      type:'short',
+      question: `현재 아버지의 나이는 ${currentParent}세, 아들의 나이는 ${currentChild}세입니다. 아버지의 나이가 아들의 나이의 ${ratio}배였던 것은 몇 년 전입니까?`,
+      answer: String(yearsAgo),
+      answerType:'number',
+      tolerance:0,
+      unitLabel:'년',
+      hint: 'x년 전의 나이를 식으로 나타내고 비율 관계식을 세우세요.',
+      explain:`${yearsAgo}년 전: 아버지 ${pastParent}세, 아들 ${pastChild}세, ${pastParent}÷${pastChild} ≈ ${ratio}`
+    };
+  }
+});
+
+// 도형 둘레 문제 (난이도3)
+T11.push({
+  key:'rectangle_perimeter_hard',
+  unitId:'m1-1-2-I-1',
+  difficulty: 3,
+  tags:['기본도형','둘레'],
+  gen(){
+    const {randInt} = GenCore;
+    const width = randInt(5,15);
+    const lengthRatio = randInt(2,4);
+    const length = width * lengthRatio;
+    const perimeter = 2 * (width + length);
+    return {
+      type:'short',
+      question: `직사각형의 가로가 세로의 ${lengthRatio}배이고 세로가 ${width}cm일 때, 둘레는 몇 cm입니까?`,
+      answer: String(perimeter),
+      answerType:'number',
+      tolerance:0,
+      unitLabel:'cm',
+      hint: '가로 = 세로 × ${lengthRatio}, 둘레 = 2×(가로+세로)',
+      explain:`가로 = ${width}×${lengthRatio} = ${length}cm, 둘레 = 2×(${length}+${width}) = ${perimeter}cm`
+    };
+  }
+});
+
+// 각도 응용 문제 (난이도3)
+T11.push({
+  key:'angle_complex_hard',
+  unitId:'m1-1-2-I-1',
+  difficulty: 3,
+  tags:['기본도형','각'],
+  gen(){
+    const {randInt} = GenCore;
+    const ratio = randInt(2,5);
+    const smallAngle = randInt(20,40);
+    const largeAngle = smallAngle * ratio;
+    const thirdAngle = 180 - smallAngle - largeAngle;
+    return {
+      type:'short',
+      question: `한 직선 위에 세 각이 있습니다. 가장 작은 각이 ${smallAngle}°이고, 중간 각이 작은 각의 ${ratio}배일 때, 나머지 각은 몇 도입니까?`,
+      answer: String(thirdAngle),
+      answerType:'number',
+      tolerance:0,
+      unitLabel:'°',
+      hint: '직선 위의 각의 합은 180°입니다.',
+      explain:`중간각 = ${smallAngle}×${ratio} = ${largeAngle}°, 나머지 = 180-${smallAngle}-${largeAngle} = ${thirdAngle}°`
+    };
+  }
+});
+
+// 원 넓이 응용 (난이도3)
+T11.push({
+  key:'circle_area_hard',
+  unitId:'m1-1-2-II-2',
+  difficulty: 3,
+  tags:['원','넓이'],
+  gen(){
+    const {randInt} = GenCore;
+    const smallR = randInt(3,8);
+    const largeR = smallR + randInt(2,5);
+    const areaSmall = 3.14 * smallR * smallR;
+    const areaLarge = 3.14 * largeR * largeR;
+    const ringArea = areaLarge - areaSmall;
+    return {
+      type:'short',
+      question: `반지름이 ${largeR}cm인 원에서 반지름이 ${smallR}cm인 원을 뺀 도넛 모양의 넓이는 몇 cm²입니까? (원주율 3.14)`,
+      answer: String(ringArea.toFixed(1)),
+      answerType:'number',
+      tolerance:1,
+      unitLabel:'cm²',
+      hint: '큰 원의 넓이 - 작은 원의 넓이',
+      explain:`큰 원 = 3.14×${largeR}×${largeR} = ${areaLarge.toFixed(1)}cm², 작은 원 = 3.14×${smallR}×${smallR} = ${areaSmall.toFixed(1)}cm², 차이 = ${ringArea.toFixed(1)}cm²`
+    };
+  }
+});
+
+// 입체도형 복합 (난이도3)
+T11.push({
+  key:'cylinder_complex_hard',
+  unitId:'m1-1-2-III-2',
+  difficulty: 3,
+  tags:['입체도형','부피','겉넓이'],
+  gen(){
+    const {randInt} = GenCore;
+    const r = randInt(4,10);
+    const h = randInt(10,20);
+    const volume = 3.14 * r * r * h;
+    const surfaceArea = 2 * 3.14 * r * r + 2 * 3.14 * r * h;
+    return {
+      type:'short',
+      question: `반지름 ${r}cm, 높이 ${h}cm인 원기둥의 부피와 겉넓이의 합은? (원주율 3.14, 소수점 첫째자리까지)`,
+      answer: String((volume + surfaceArea).toFixed(1)),
+      answerType:'number',
+      tolerance:5,
+      unitLabel:'',
+      hint: '부피 = πr²h, 겉넓이 = 2πr² + 2πrh',
+      explain:`부피 = ${volume.toFixed(1)}, 겉넓이 = ${surfaceArea.toFixed(1)}, 합 = ${(volume+surfaceArea).toFixed(1)}`
     };
   }
 });

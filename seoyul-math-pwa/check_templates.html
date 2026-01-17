@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>템플릿 통계 확인</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #4CAF50; color: white; }
+        .missing { background-color: #ffcccc; }
+        .low { background-color: #ffffcc; }
+        .good { background-color: #ccffcc; }
+    </style>
+</head>
+<body>
+    <h1>📊 단원별 문제 템플릿 통계</h1>
+    <div id="stats"></div>
+    <div id="details"></div>
+
+    <script src="/js/generator/core.js"></script>
+    <script src="/js/generator/templates_1_1.js"></script>
+    <script src="/js/generator/templates_1_2.js"></script>
+    <script src="/js/generator/generate.js"></script>
+
+    <script>
+        const syllabus = {
+            "m1-1-1-I-1": "소인수분해",
+            "m1-1-1-I-2": "최대공약수와 최소공배수",
+            "m1-1-1-II-1": "정수와 유리수",
+            "m1-1-1-II-2": "정수와 유리수의 계산",
+            "m1-1-1-III-1": "문자의 사용과 식",
+            "m1-1-1-III-2": "일차식의 계산",
+            "m1-1-1-III-3": "방정식과 그 해",
+            "m1-1-1-III-4": "일차방정식의 풀이",
+            "m1-1-1-III-5": "일차방정식의 활용",
+            "m1-1-2-I-1": "기본 도형",
+            "m1-1-2-I-2": "위치 관계",
+            "m1-1-2-I-3": "작도와 합동",
+            "m1-1-2-II-1": "다각형",
+            "m1-1-2-II-2": "원과 부채꼴",
+            "m1-1-2-III-1": "다면체와 회전체",
+            "m1-1-2-III-2": "입체도형의 겉넓이와 부피"
+        };
+
+        const allTemplates = Generator.allTemplates();
+        const stats = {};
+
+        // 통계 수집
+        Object.keys(syllabus).forEach(unitId => {
+            stats[unitId] = {
+                title: syllabus[unitId],
+                1: 0, 2: 0, 3: 0,
+                total: 0
+            };
+        });
+
+        allTemplates.forEach(tpl => {
+            if (stats[tpl.unitId]) {
+                stats[tpl.unitId][tpl.difficulty]++;
+                stats[tpl.unitId].total++;
+            }
+        });
+
+        // 통계 표시
+        let html = '<h2>📈 요약 통계</h2>';
+        html += '<table>';
+        html += '<tr><th>단원 ID</th><th>단원명</th><th>난이도 1</th><th>난이도 2</th><th>난이도 3</th><th>총계</th></tr>';
+
+        let totalMissing = 0;
+        Object.keys(stats).forEach(unitId => {
+            const s = stats[unitId];
+            const missing3 = s[3] === 0;
+            const low = s.total < 3;
+            const rowClass = missing3 ? 'missing' : (low ? 'low' : 'good');
+            
+            if (missing3) totalMissing++;
+            
+            html += `<tr class="${rowClass}">`;
+            html += `<td>${unitId}</td>`;
+            html += `<td>${s.title}</td>`;
+            html += `<td>${s[1]}</td>`;
+            html += `<td>${s[2]}</td>`;
+            html += `<td style="font-weight: bold;">${s[3]}</td>`;
+            html += `<td><strong>${s.total}</strong></td>`;
+            html += '</tr>';
+        });
+
+        html += '</table>';
+        html += `<p><strong>난이도 3 문제가 없는 단원: ${totalMissing}개</strong></p>`;
+        html += '<p>🔴 빨간색: 난이도 3 문제 없음 | 🟡 노란색: 총 문제 3개 미만 | 🟢 초록색: 양호</p>';
+
+        document.getElementById('stats').innerHTML = html;
+
+        // 상세 템플릿 목록
+        let detailHtml = '<h2>📝 상세 템플릿 목록</h2>';
+        Object.keys(stats).forEach(unitId => {
+            const s = stats[unitId];
+            detailHtml += `<h3>${unitId}: ${s.title} (총 ${s.total}개)</h3>`;
+            const templates = allTemplates.filter(t => t.unitId === unitId);
+            if (templates.length === 0) {
+                detailHtml += '<p style="color: red;">❌ 템플릿 없음</p>';
+            } else {
+                detailHtml += '<ul>';
+                templates.forEach(t => {
+                    detailHtml += `<li>[난이도 ${t.difficulty}] ${t.key} - ${t.tags.join(', ')}</li>`;
+                });
+                detailHtml += '</ul>';
+            }
+        });
+
+        document.getElementById('details').innerHTML = detailHtml;
+    </script>
+</body>
+</html>
