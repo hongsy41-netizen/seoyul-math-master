@@ -26,7 +26,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_11",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -46,7 +46,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_12",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -66,7 +66,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_14",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -106,7 +106,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_17",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -126,7 +126,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_18",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -146,7 +146,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_19",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -166,7 +166,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_22",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -186,7 +186,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_25",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -206,7 +206,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_27",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -226,7 +226,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_29",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -246,7 +246,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_30",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -286,7 +286,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_38",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -346,7 +346,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_42",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -366,7 +366,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_45",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -386,7 +386,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_46",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -426,7 +426,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_54",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -446,7 +446,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_55",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -466,7 +466,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_56",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -486,7 +486,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_59",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -506,7 +506,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_62",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -526,7 +526,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_64",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -546,7 +546,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_66",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -566,7 +566,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_68",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -646,7 +646,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_74",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -686,7 +686,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_80",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -706,7 +706,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_83",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -726,7 +726,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_84",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -746,7 +746,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_85",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -766,7 +766,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_87",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -786,7 +786,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_88",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -806,7 +806,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_89",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -826,7 +826,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_90",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -846,7 +846,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_92",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -866,7 +866,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_93",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -886,7 +886,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_96",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -906,7 +906,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_97",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -926,7 +926,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_100",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -946,7 +946,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_101",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -986,7 +986,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_106",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1026,7 +1026,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_108",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1046,7 +1046,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_109",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1066,7 +1066,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_112",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1086,7 +1086,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_116",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1106,7 +1106,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_118",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1126,7 +1126,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_119",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1146,7 +1146,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_124",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1166,7 +1166,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_126",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1206,7 +1206,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_128",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1226,7 +1226,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_131",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1246,7 +1246,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_133",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1266,7 +1266,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_136",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1286,7 +1286,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_138",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1306,7 +1306,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_142",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1326,7 +1326,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_148",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1346,7 +1346,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_149",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1366,7 +1366,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_151",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1386,7 +1386,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_153",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1406,7 +1406,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_154",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1426,7 +1426,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_156",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1446,7 +1446,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_157",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1466,7 +1466,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_158",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1526,7 +1526,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_164",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1546,7 +1546,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_170",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1566,7 +1566,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_172",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1586,7 +1586,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_173",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1606,7 +1606,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_175",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1626,7 +1626,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_177",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1646,7 +1646,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_178",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1666,7 +1666,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_179",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1686,7 +1686,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_180",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1706,7 +1706,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_181",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1746,7 +1746,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_186",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1766,7 +1766,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_187",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1786,7 +1786,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_188",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1806,7 +1806,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_190",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1846,7 +1846,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_192",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1866,7 +1866,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_194",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1886,7 +1886,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_195",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1926,7 +1926,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_197",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1966,7 +1966,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_199",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -1986,7 +1986,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_200",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2006,7 +2006,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_201",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2046,7 +2046,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_203",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2066,7 +2066,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_206",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2126,7 +2126,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_215",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2146,7 +2146,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_217",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2166,7 +2166,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_219",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2186,7 +2186,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_221",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2206,7 +2206,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_222",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2226,7 +2226,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_223",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2246,7 +2246,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_228",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2266,7 +2266,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_231",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2346,7 +2346,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_239",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2386,7 +2386,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_242",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2426,7 +2426,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_244",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2466,7 +2466,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_248",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2506,7 +2506,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_250",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2526,7 +2526,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_251",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2566,7 +2566,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_254",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2586,7 +2586,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_255",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2606,7 +2606,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_257",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2646,7 +2646,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_265",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2666,7 +2666,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_266",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2686,7 +2686,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_268",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2706,7 +2706,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_270",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2726,7 +2726,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_273",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2786,7 +2786,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_276",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2806,7 +2806,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_278",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2846,7 +2846,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_280",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2866,7 +2866,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_281",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2886,7 +2886,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_282",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2906,7 +2906,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_283",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2926,7 +2926,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_284",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2946,7 +2946,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_287",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -2986,7 +2986,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_289",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3006,7 +3006,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_295",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3026,7 +3026,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_301",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3046,7 +3046,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_302",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3066,7 +3066,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_303",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3086,7 +3086,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_305",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3106,7 +3106,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_306",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3126,7 +3126,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_308",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3146,7 +3146,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_309",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3166,7 +3166,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_312",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3186,7 +3186,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_315",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3206,7 +3206,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_320",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3226,7 +3226,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_322",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3266,7 +3266,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_326",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3286,7 +3286,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_327",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3306,7 +3306,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_329",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3326,7 +3326,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_330",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3346,7 +3346,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_333",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3366,7 +3366,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_334",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3386,7 +3386,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_339",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3426,7 +3426,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_342",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3446,7 +3446,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_344",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3466,7 +3466,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_345",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3506,7 +3506,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_349",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3526,7 +3526,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_350",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3546,7 +3546,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_352",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3566,7 +3566,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_354",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3586,7 +3586,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_355",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3606,7 +3606,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_359",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3686,7 +3686,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_363",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3706,7 +3706,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_364",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3726,7 +3726,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_366",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3746,7 +3746,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_367",
   unitId:"m1-1-1-III-5",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3766,7 +3766,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_371",
   unitId:"m1-1-1-II-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3786,7 +3786,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_373",
   unitId:"m1-1-1-III-1",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {
@@ -3806,7 +3806,7 @@ T11_external.push({
 T11_external.push({
   key:"external_산술연산_374",
   unitId:"m1-1-1-III-2",
-  difficulty:3,
+  difficulty:2,
   tags:["산술연산","외부DB","고품질"],
   gen(){
     return {

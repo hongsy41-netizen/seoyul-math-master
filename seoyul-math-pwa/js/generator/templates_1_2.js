@@ -228,7 +228,7 @@ T12.push({
 T12.push({
   key:'regular_polygon',
   unitId:'m1-1-2-II-1',
-  difficulty:3,
+  difficulty:2,
   tags:['다각형','정다각형'],
   gen(){
     const {randInt} = GenCore;
@@ -298,7 +298,7 @@ T12.push({
 T12.push({
   key:'sector_arc',
   unitId:'m1-1-2-II-2',
-  difficulty:3,
+  difficulty:2,
   tags:['원','부채꼴','호'],
   gen(){
     const {randInt} = GenCore;
@@ -426,7 +426,7 @@ T12.push({
 T12.push({
   key:'cylinder_volume',
   unitId:'m1-1-2-III-2',
-  difficulty:3,
+  difficulty:2,
   tags:['부피','원기둥'],
   gen(){
     const {randInt} = GenCore;
@@ -450,7 +450,7 @@ T12.push({
 T12.push({
   key:'cone_volume',
   unitId:'m1-1-2-III-2',
-  difficulty:3,
+  difficulty:2,
   tags:['부피','원뿔'],
   gen(){
     const {randInt} = GenCore;
@@ -474,7 +474,7 @@ T12.push({
 T12.push({
   key:'sphere_volume',
   unitId:'m1-1-2-III-2',
-  difficulty:3,
+  difficulty:2,
   tags:['부피','구'],
   gen(){
     const {randInt} = GenCore;
@@ -497,7 +497,7 @@ T12.push({
 T12.push({
   key:'angle_complex',
   unitId:'m1-1-2-I-1',
-  difficulty:3,
+  difficulty:2,
   tags:['각','복합'],
   gen(){
     const {randInt} = GenCore;
@@ -522,7 +522,7 @@ T12.push({
 T12.push({
   key:'corresponding_alternate_angles',
   unitId:'m1-1-2-I-2',
-  difficulty:3,
+  difficulty:2,
   tags:['평행선','동위각','엇각'],
   gen(){
     const {randInt, choice} = GenCore;
@@ -545,7 +545,7 @@ T12.push({
 T12.push({
   key:'triangle_congruence',
   unitId:'m1-1-2-I-3',
-  difficulty:3,
+  difficulty:2,
   tags:['합동','삼각형'],
   gen(){
     const {choice} = GenCore;
@@ -572,7 +572,7 @@ T12.push({
 T12.push({
   key:'regular_polygon_exterior',
   unitId:'m1-1-2-II-1',
-  difficulty:3,
+  difficulty:2,
   tags:['다각형','정다각형','외각'],
   gen(){
     const {randInt} = GenCore;
@@ -595,7 +595,7 @@ T12.push({
 T12.push({
   key:'circle_sector_complex',
   unitId:'m1-1-2-II-2',
-  difficulty:3,
+  difficulty:2,
   tags:['원','부채꼴','복합'],
   gen(){
     const {randInt} = GenCore;
@@ -621,7 +621,7 @@ T12.push({
 T12.push({
   key:'polyhedron_euler',
   unitId:'m1-1-2-III-1',
-  difficulty:3,
+  difficulty:2,
   tags:['다면체','오일러'],
   gen(){
     const {choice} = GenCore;
@@ -662,7 +662,7 @@ T12.push({
 T12.push({
   key:'solid_revolution_volume',
   unitId:'m1-1-2-III-1',
-  difficulty:3,
+  difficulty:2,
   tags:['회전체','부피'],
   gen(){
     const {randInt} = GenCore;
@@ -688,7 +688,7 @@ T12.push({
 T12.push({
   key:'solid_surface_volume_complex',
   unitId:'m1-1-2-III-2',
-  difficulty:3,
+  difficulty:2,
   tags:['겉넓이','부피','복합'],
   gen(){
     const {randInt, choice} = GenCore;
