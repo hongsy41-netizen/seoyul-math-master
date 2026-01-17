@@ -82,7 +82,7 @@ T11.push({
   difficulty: 1,
   tags:['정수','계산'],
   gen(){
-    const {randInt} = GenCore;
+    const {randInt, formatSign} = GenCore;
     const a = randInt(-20,20);
     const b = randInt(-20,20);
     const c = randInt(-10,10);
@@ -95,7 +95,8 @@ T11.push({
       q = `${a} - (${b}) = ?`;
       ans = a - b;
     } else {
-      q = `${a} + ${b} - (${c}) = ?`;
+      const bStr = formatSign(b, 'middle');
+      q = `${a} ${bStr} - (${c}) = ?`;
       ans = a + b - c;
     }
     return {
@@ -392,22 +393,23 @@ T11.push({
   difficulty: 1,
   tags:['일차식','덧셈'],
   gen(){
-    const {randInt} = GenCore;
+    const {randInt, formatSign} = GenCore;
     const a = randInt(2,9);
     const b = randInt(2,9);
     const c = randInt(1,9);
     const d = randInt(1,9);
     const ansX = a+b;
     const ansC = c+d;
+    const ansCStr = ansC >= 0 ? `+${ansC}` : String(ansC);
     return {
       type:'short',
       question: `(${a}x + ${c}) + (${b}x + ${d})를 간단히 하시오. (예: 5x+3)`,
-      answer: `${ansX}x${ansC>=0?'+':''}${ansC}`,
+      answer: `${ansX}x${ansCStr}`,
       answerType:'string',
       tolerance:0,
       unitLabel:'',
       hint:'동류항끼리 계수를 더하세요.',
-      explain:`${a}x + ${b}x = ${ansX}x, ${c} + ${d} = ${ansC}, 답: ${ansX}x+${ansC}`
+      explain:`${a}x + ${b}x = ${ansX}x, ${c} + ${d} = ${ansC}, 답: ${ansX}x${ansCStr}`
     };
   }
 });
@@ -419,22 +421,23 @@ T11.push({
   difficulty: 2,
   tags:['일차식','뺄셈'],
   gen(){
-    const {randInt} = GenCore;
+    const {randInt, formatSign} = GenCore;
     const a = randInt(3,9);
     const b = randInt(2,9);
     const c = randInt(1,9);
     const d = randInt(1,9);
     const ansX = a-b;
     const ansC = c-d;
+    const ansCStr = ansC >= 0 ? `+${ansC}` : String(ansC);
     return {
       type:'short',
       question: `(${a}x + ${c}) - (${b}x + ${d})를 간단히 하시오.`,
-      answer: `${ansX}x${ansC>=0?'+':''}${ansC}`,
+      answer: `${ansX}x${ansCStr}`,
       answerType:'string',
       tolerance:0,
       unitLabel:'',
       hint:'빼는 식은 부호를 바꿔서 더합니다.',
-      explain:`${a}x - ${b}x = ${ansX}x, ${c} - ${d} = ${ansC}, 답: ${ansX}x${ansC>=0?'+':''}${ansC}`
+      explain:`${a}x - ${b}x = ${ansX}x, ${c} - ${d} = ${ansC}, 답: ${ansX}x${ansCStr}`
     };
   }
 });
@@ -446,20 +449,21 @@ T11.push({
   difficulty: 1,
   tags:['방정식','해'],
   gen(){
-    const {randInt} = GenCore;
+    const {randInt, formatSign} = GenCore;
     const x = randInt(-5,10);
     const a = randInt(2,9);
     const b = randInt(-10,10);
     const c = a*x + b;
+    const bStr = formatSign(b, 'middle');
     return {
       type:'short',
-      question: `x = ${x}이 방정식 ${a}x + ${b} = c의 해일 때, c의 값은?`,
+      question: `x = ${x}이 방정식 ${a}x ${bStr} = c의 해일 때, c의 값은?`,
       answer: String(c),
       answerType:'number',
       tolerance:0,
       unitLabel:'',
       hint:'주어진 x값을 식에 대입하여 c를 구하세요.',
-      explain:`${a}×${x} + ${b} = ${a*x} + ${b} = ${c}`
+      explain:`${a}×${x} ${bStr} = ${a*x} ${bStr} = ${c}`
     };
   }
 });
@@ -495,7 +499,7 @@ T11.push({
   difficulty: 3,
   tags:['일차방정식','괄호'],
   gen(){
-    const {randInt} = GenCore;
+    const {randInt, formatSign} = GenCore;
     const x = randInt(-8,8);
     const a = randInt(2,6);
     const b = randInt(2,6);
@@ -504,9 +508,9 @@ T11.push({
     // (a+b)x + c + d = (a+b)*x + c + d
     const right = (a+b)*x + c + d;
     // 자연스러운 표현을 위한 부호 처리
-    const cStr = c >= 0 ? `+ ${c}` : `- ${Math.abs(c)}`;
-    const acStr = (a*c) >= 0 ? `+ ${a*c}` : `- ${Math.abs(a*c)}`;
-    const sumStr = (a+b)*x >= 0 ? `= ${(a+b)*x}` : `= ${(a+b)*x}`;
+    const cStr = formatSign(c, 'middle');
+    const acStr = formatSign(a*c, 'middle');
+    const sumStr = formatSign((a+b)*x, 'middle');
     return {
       type:'short',
       question: `${a}(x ${cStr}) + ${b}x = ${right - a*c} (괄호를 먼저 풀고 풀어라)`,
@@ -515,7 +519,7 @@ T11.push({
       tolerance:0,
       unitLabel:'',
       hint:'괄호를 풀고 동류항끼리 정리한 후, 이항하세요.',
-      explain:`${a}x ${acStr} + ${b}x = ${right - a*c} → ${a+b}x ${sumStr} → x = ${x}`
+      explain:`${a}x ${acStr} + ${b}x = ${right - a*c} → ${(a+b)}x ${sumStr} → x = ${x}`
     };
   }
 });
@@ -928,7 +932,7 @@ T11.push({
   difficulty: 3,
   tags:['일차식','괄호풀기'],
   gen(){
-    const {randInt} = GenCore;
+    const {randInt, formatSign} = GenCore;
     const a = randInt(2,5);
     const b = randInt(2,5);
     const c = randInt(-5,5);
@@ -936,17 +940,18 @@ T11.push({
     const ansX = a - b;
     const ansC = a*c - b*d;
     // 자연스러운 표현
-    const cStr = c >= 0 ? `+ ${c}` : `- ${Math.abs(c)}`;
-    const dStr = d >= 0 ? `+ ${d}` : `- ${Math.abs(d)}`;
+    const cStr = formatSign(c, 'middle');
+    const dStr = formatSign(d, 'middle');
+    const ansCStr = ansC >= 0 ? `+${ansC}` : String(ansC);
     return {
       type:'short',
       question: `${a}(x ${cStr}) - ${b}(x ${dStr})를 간단히 하시오.`,
-      answer: `${ansX}x${ansC>=0?'+':''}${ansC}`,
+      answer: `${ansX}x${ansCStr}`,
       answerType:'string',
       tolerance:0,
       unitLabel:'',
       hint: '분배법칙으로 괄호를 풀고 동류항끼리 정리하세요.',
-      explain:`${a}x+${a*c}-${b}x-${b*d} = ${ansX}x${ansC>=0?'+':''}${ansC}`
+      explain:`${a}x ${formatSign(a*c, 'middle')} - ${b}x ${formatSign(b*d, 'middle')} = ${ansX}x${ansCStr}`
     };
   }
 });

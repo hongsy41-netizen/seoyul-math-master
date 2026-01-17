@@ -58,4 +58,15 @@ function parseNumber(text){
   return Number(m[1]);
 }
 
-window.GenCore = { randInt, choice, shuffle, gcd, lcm, isPrime, primeFactors, factorsToString, parseNumber };
+// 부호를 자연스럽게 표현하는 헬퍼 함수
+function formatSign(num, position = 'middle') {
+  if (position === 'first') {
+    // 식의 맨 앞: 양수/음수 모두 그대로 표현
+    return String(num);
+  } else {
+    // 식의 중간: 양수면 '+ 숫자', 음수면 '- |숫자|'
+    return num >= 0 ? `+ ${num}` : `- ${Math.abs(num)}`;
+  }
+}
+
+window.GenCore = { randInt, choice, shuffle, gcd, lcm, isPrime, primeFactors, factorsToString, parseNumber, formatSign };
