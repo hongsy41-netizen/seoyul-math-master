@@ -523,19 +523,58 @@ T11.push({
   difficulty: 1,
   tags:['활용','문장제'],
   gen(){
-    const {randInt} = GenCore;
-    const x = randInt(3,20);
-    const a = randInt(2,5);
-    const total = a*x;
+    const {randInt, choice} = GenCore;
+    const scenarios = [
+      // 연필 묶음
+      () => {
+        const perBundle = choice([5, 10, 12]);
+        const bundles = randInt(3, 10);
+        const total = perBundle * bundles;
+        return {
+          question: `연필을 ${perBundle}자루씩 묶음으로 팔고 있습니다. 총 ${total}자루가 있다면 몇 묶음인가요?`,
+          answer: String(bundles),
+          unitLabel: '묶음',
+          hint: `${perBundle}x = ${total} 형태로 식을 세워보세요.`,
+          explain: `${perBundle}x = ${total}, x = ${bundles}`
+        };
+      },
+      // 과자 나누기
+      () => {
+        const perPerson = randInt(3, 8);
+        const people = randInt(5, 15);
+        const total = perPerson * people;
+        return {
+          question: `과자 ${total}개를 ${people}명에게 똑같이 나눠 줍니다. 한 명당 받는 과자는 몇 개입니까?`,
+          answer: String(perPerson),
+          unitLabel: '개',
+          hint: `${people}x = ${total} 형태로 식을 세워보세요.`,
+          explain: `${people}x = ${total}, x = ${perPerson}`
+        };
+      },
+      // 책 가격
+      () => {
+        const books = randInt(3, 8);
+        const pricePerBook = choice([5000, 8000, 10000, 12000]);
+        const total = books * pricePerBook;
+        return {
+          question: `같은 가격의 책을 ${books}권 샀더니 총 ${total.toLocaleString()}원이 나왔습니다. 책 한 권의 가격은?`,
+          answer: String(pricePerBook),
+          unitLabel: '원',
+          hint: `${books}x = ${total} 형태로 식을 세워보세요.`,
+          explain: `${books}x = ${total}, x = ${pricePerBook}`
+        };
+      }
+    ];
+    const picked = choice(scenarios)();
     return {
       type:'short',
-      question: `연필을 ${a}자루씩 묶음으로 팔고 있습니다. 총 ${total}자루가 있다면 몇 묶음인가요?`,
-      answer: String(x),
+      question: picked.question,
+      answer: picked.answer,
       answerType:'number',
       tolerance:0,
-      unitLabel:'묶음',
-      hint:'${a}x = ${total} 형태로 식을 세워보세요.',
-      explain:`${a}x = ${total}, x = ${x}`
+      unitLabel: picked.unitLabel,
+      hint: picked.hint,
+      explain: picked.explain
     };
   }
 });
@@ -547,20 +586,61 @@ T11.push({
   difficulty: 2,
   tags:['활용','문장제'],
   gen(){
-    const {randInt} = GenCore;
-    const x = randInt(10,50);
-    const a = randInt(500,2000);
-    const b = randInt(100,500);
-    const total = a*x + b;
+    const {randInt, choice} = GenCore;
+    const scenarios = [
+      // 문구점 구매
+      () => {
+        const items = randInt(5, 20);
+        const pricePerItem = choice([1000, 1500, 2000, 2500, 3000]);
+        const delivery = choice([2500, 3000]);
+        const total = pricePerItem * items + delivery;
+        return {
+          question: `문구점에서 공책을 한 권에 ${pricePerItem.toLocaleString()}원씩 x권 사고, 배송비 ${delivery.toLocaleString()}원을 내서 총 ${total.toLocaleString()}원을 지불했습니다. x는?`,
+          answer: String(items),
+          unitLabel: '권',
+          hint: `${pricePerItem}x + ${delivery} = ${total} 형태로 식을 세우세요.`,
+          explain: `${pricePerItem}x = ${total-delivery}, x = ${items}`
+        };
+      },
+      // 펜 구매
+      () => {
+        const items = randInt(10, 30);
+        const pricePerItem = choice([500, 800, 1000, 1200]);
+        const discount = choice([1000, 1500, 2000]);
+        const total = pricePerItem * items - discount;
+        return {
+          question: `펜을 한 개에 ${pricePerItem.toLocaleString()}원씩 x개 사면 ${discount.toLocaleString()}원 할인을 받습니다. ${total.toLocaleString()}원을 냈다면 x는?`,
+          answer: String(items),
+          unitLabel: '개',
+          hint: `${pricePerItem}x - ${discount} = ${total} 형태로 식을 세우세요.`,
+          explain: `${pricePerItem}x = ${total+discount}, x = ${items}`
+        };
+      },
+      // 카페 구매
+      () => {
+        const drinks = randInt(3, 8);
+        const pricePerDrink = choice([3500, 4000, 4500, 5000]);
+        const cake = choice([5000, 6000]);
+        const total = pricePerDrink * drinks + cake;
+        return {
+          question: `카페에서 음료를 한 잔에 ${pricePerDrink.toLocaleString()}원씩 x잔 사고, 케이크 ${cake.toLocaleString()}원을 사서 총 ${total.toLocaleString()}원을 냈습니다. x는?`,
+          answer: String(drinks),
+          unitLabel: '잔',
+          hint: `${pricePerDrink}x + ${cake} = ${total} 형태로 식을 세우세요.`,
+          explain: `${pricePerDrink}x = ${total-cake}, x = ${drinks}`
+        };
+      }
+    ];
+    const picked = choice(scenarios)();
     return {
       type:'short',
-      question: `어떤 물건을 한 개에 ${a}원씩 x개 사고, 배송비 ${b}원을 내서 총 ${total}원을 지불했습니다. x는?`,
-      answer: String(x),
+      question: picked.question,
+      answer: picked.answer,
       answerType:'number',
       tolerance:0,
-      unitLabel:'개',
-      hint:'${a}x + ${b} = ${total} 형태로 식을 세우세요.',
-      explain:`${a}x = ${total-b}, x = ${x}`
+      unitLabel: picked.unitLabel,
+      hint: picked.hint,
+      explain: picked.explain
     };
   }
 });
