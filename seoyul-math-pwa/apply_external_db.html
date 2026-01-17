@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>외부 DB 적용 완료!</title>
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    .container {
+      background: white;
+      color: #2c3e50;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    }
+    h1 {
+      color: #667eea;
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .success {
+      background: #d4edda;
+      border-left: 5px solid #28a745;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin: 30px 0;
+    }
+    .stat-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .stat-number {
+      font-size: 3em;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .stat-label {
+      font-size: 1.1em;
+      opacity: 0.9;
+    }
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      margin: 10px;
+      background: #667eea;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: all 0.3s;
+      text-align: center;
+    }
+    .btn:hover {
+      background: #5568d3;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    }
+    .btn-primary {
+      background: #28a745;
+    }
+    .btn-primary:hover {
+      background: #218838;
+    }
+    .instructions {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    .instructions h3 {
+      color: #667eea;
+      margin-top: 0;
+    }
+    .instructions ol {
+      padding-left: 20px;
+    }
+    .instructions li {
+      margin: 10px 0;
+      line-height: 1.6;
+    }
+    .emoji {
+      font-size: 1.5em;
+      margin-right: 10px;
+    }
+    .buttons {
+      text-align: center;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎉 외부 DB 적용 완료!</h1>
+    
+    <div class="success">
+      <h2 style="margin-top: 0;"><span class="emoji">✅</span>3,000개 실제 문제 통합 성공!</h2>
+      <p style="font-size: 1.1em; margin: 0;">
+        GitHub 저장소(jkc-ai/mwp-korean-data-2021)에서 가져온 
+        <strong>검증된 한국어 수학 문제</strong>가 지금 바로 사용 가능합니다!
+      </p>
+    </div>
+
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-number">400+</div>
+        <div class="stat-label">새로운 템플릿</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">3,000+</div>
+        <div class="stat-label">실제 문제</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">8</div>
+        <div class="stat-label">문제 유형</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">한국어 문제</div>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <h3><span class="emoji">📖</span>사용 방법</h3>
+      <ol>
+        <li><strong>메인 앱 접속</strong>: 아래 버튼 클릭</li>
+        <li><strong>단원 선택</strong>: 왼쪽 목차에서 원하는 단원 선택
+          <ul>
+            <li>정수와 유리수의 계산</li>
+            <li>일차방정식의 활용</li>
+            <li>기타 모든 단원</li>
+          </ul>
+        </li>
+        <li><strong>문제 풀이</strong>: 외부 DB 문제가 자동으로 섞여서 나옵니다</li>
+        <li><strong>출처 확인</strong>: 문제에 '외부DB' 태그가 표시됩니다</li>
+      </ol>
+    </div>
+
+    <div class="instructions">
+      <h3><span class="emoji">🎯</span>포함된 문제 유형</h3>
+      <ol>
+        <li><strong>산술연산</strong> - 사칙연산 활용 문제</li>
+        <li><strong>순서정하기</strong> - 수의 크기 순서 문제</li>
+        <li><strong>조합하기</strong> - 조합 관련 문제</li>
+        <li><strong>수찾기 1~3</strong> - 패턴과 규칙 찾기</li>
+        <li><strong>크기비교</strong> - 수의 대소 비교</li>
+        <li><strong>도형산술</strong> - 도형 관련 계산</li>
+      </ol>
+    </div>
+
+    <div class="buttons">
+      <a href="/" class="btn btn-primary">
+        <span class="emoji">🚀</span>메인 앱으로 가기
+      </a>
+      <a href="/test_external.html" class="btn">
+        <span class="emoji">🧪</span>외부 DB 테스트
+      </a>
+    </div>
+
+    <div style="margin-top: 30px; padding: 20px; background: #e7f3ff; border-radius: 8px; text-align: center;">
+      <h3 style="color: #0066cc; margin-top: 0;">
+        <span class="emoji">💡</span>개발 정보
+      </h3>
+      <p style="margin: 5px 0;">
+        <strong>총 템플릿:</strong> 473개 (기존 73개 + 외부 400개)
+      </p>
+      <p style="margin: 5px 0;">
+        <strong>문제 증가율:</strong> +548% (6.5배)
+      </p>
+      <p style="margin: 5px 0;">
+        <strong>출처:</strong> jkc-ai/mwp-korean-data-2021
+      </p>
+      <p style="margin: 5px 0;">
+        <strong>GitHub:</strong> 
+        <a href="https://github.com/hongsy41-netizen/seoyul-math-master" 
+           target="_blank" style="color: #0066cc;">
+          seoyul-math-master
+        </a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
