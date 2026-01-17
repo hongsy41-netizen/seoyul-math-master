@@ -1,1 +1,146 @@
-[]
+[
+  {
+    "id": "W1768647326614",
+    "createdAt": "2026-01-17T10:55:26.614Z",
+    "unitId": "m1-1-1-I-2",
+    "difficulty": 1,
+    "userAnswer": "1",
+    "reason": "채점 오답",
+    "problem": {
+      "id": "P1768647285266_119",
+      "unitId": "m1-1-1-I-2",
+      "difficulty": 1,
+      "tags": [
+        "최대공약수"
+      ],
+      "type": "short",
+      "question": "28와(과) 8의 최대공약수를 구하시오.",
+      "answer": "4",
+      "answerType": "number",
+      "tolerance": 0,
+      "unitLabel": "",
+      "hint": "공통으로 나누어지는 가장 큰 수를 찾으세요.",
+      "explain": "최대공약수는 4입니다."
+    }
+  },
+  {
+    "id": "W1768647324687",
+    "createdAt": "2026-01-17T10:55:24.687Z",
+    "unitId": "m1-1-1-I-2",
+    "difficulty": 1,
+    "userAnswer": "1",
+    "reason": "채점 오답",
+    "problem": {
+      "id": "P1768647285266_119",
+      "unitId": "m1-1-1-I-2",
+      "difficulty": 1,
+      "tags": [
+        "최대공약수"
+      ],
+      "type": "short",
+      "question": "28와(과) 8의 최대공약수를 구하시오.",
+      "answer": "4",
+      "answerType": "number",
+      "tolerance": 0,
+      "unitLabel": "",
+      "hint": "공통으로 나누어지는 가장 큰 수를 찾으세요.",
+      "explain": "최대공약수는 4입니다."
+    }
+  },
+  {
+    "id": "W1768647324686",
+    "createdAt": "2026-01-17T10:55:24.686Z",
+    "unitId": "m1-1-1-I-2",
+    "difficulty": 1,
+    "userAnswer": "1",
+    "reason": "채점 오답",
+    "problem": {
+      "id": "P1768647285266_119",
+      "unitId": "m1-1-1-I-2",
+      "difficulty": 1,
+      "tags": [
+        "최대공약수"
+      ],
+      "type": "short",
+      "question": "28와(과) 8의 최대공약수를 구하시오.",
+      "answer": "4",
+      "answerType": "number",
+      "tolerance": 0,
+      "unitLabel": "",
+      "hint": "공통으로 나누어지는 가장 큰 수를 찾으세요.",
+      "explain": "최대공약수는 4입니다."
+    }
+  },
+  {
+    "id": "W1768647318260",
+    "createdAt": "2026-01-17T10:55:18.260Z",
+    "unitId": "m1-1-1-I-2",
+    "difficulty": 1,
+    "userAnswer": "1",
+    "reason": "채점 오답",
+    "problem": {
+      "id": "P1768647285266_11",
+      "unitId": "m1-1-1-I-2",
+      "difficulty": 1,
+      "tags": [
+        "최대공약수"
+      ],
+      "type": "short",
+      "question": "54와(과) 63의 최대공약수를 구하시오.",
+      "answer": "9",
+      "answerType": "number",
+      "tolerance": 0,
+      "unitLabel": "",
+      "hint": "공통으로 나누어지는 가장 큰 수를 찾으세요.",
+      "explain": "최대공약수는 9입니다."
+    }
+  },
+  {
+    "id": "W1768647313290",
+    "createdAt": "2026-01-17T10:55:13.290Z",
+    "unitId": "m1-1-1-I-2",
+    "difficulty": 1,
+    "userAnswer": "1",
+    "reason": "채점 오답",
+    "problem": {
+      "id": "P1768647285266_11",
+      "unitId": "m1-1-1-I-2",
+      "difficulty": 1,
+      "tags": [
+        "최대공약수"
+      ],
+      "type": "short",
+      "question": "54와(과) 63의 최대공약수를 구하시오.",
+      "answer": "9",
+      "answerType": "number",
+      "tolerance": 0,
+      "unitLabel": "",
+      "hint": "공통으로 나누어지는 가장 큰 수를 찾으세요.",
+      "explain": "최대공약수는 9입니다."
+    }
+  },
+  {
+    "id": "W1768647313284",
+    "createdAt": "2026-01-17T10:55:13.284Z",
+    "unitId": "m1-1-1-I-2",
+    "difficulty": 1,
+    "userAnswer": "1",
+    "reason": "채점 오답",
+    "problem": {
+      "id": "P1768647285266_11",
+      "unitId": "m1-1-1-I-2",
+      "difficulty": 1,
+      "tags": [
+        "최대공약수"
+      ],
+      "type": "short",
+      "question": "54와(과) 63의 최대공약수를 구하시오.",
+      "answer": "9",
+      "answerType": "number",
+      "tolerance": 0,
+      "unitLabel": "",
+      "hint": "공통으로 나누어지는 가장 큰 수를 찾으세요.",
+      "explain": "최대공약수는 9입니다."
+    }
+  }
+]

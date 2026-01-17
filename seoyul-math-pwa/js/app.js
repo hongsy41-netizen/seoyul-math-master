@@ -381,6 +381,151 @@ async function loadFixedDB(){
   }
 }
 
+// === 부모 모드 ===
+const PARENT_PASSWORD = '248530';
+let parentLoggedIn = false;
+
+function goHome(){
+  setTab('concept');
+  currentUnit = null;
+  fixedDB = null;
+  practice = null;
+  exam = null;
+  updateConcept();
+  $('practiceQuestion').textContent = '연습을 시작하세요.';
+  $('practiceFeedback').textContent = '';
+  $('examSheet').innerHTML = '';
+  $('examResult').textContent = '';
+}
+
+function parentLogin(){
+  const pw = $('parentPassword').value.trim();
+  if(pw === PARENT_PASSWORD){
+    parentLoggedIn = true;
+    $('parentLogin').style.display = 'none';
+    $('parentDashboard').style.display = 'block';
+    $('parentPassword').value = '';
+    $('parentLoginError').textContent = '';
+    loadParentStats();
+  } else {
+    $('parentLoginError').textContent = '❌ 비밀번호가 올바르지 않습니다.';
+    $('parentPassword').value = '';
+  }
+}
+
+function parentLogout(){
+  parentLoggedIn = false;
+  $('parentLogin').style.display = 'block';
+  $('parentDashboard').style.display = 'none';
+  $('parentPassword').value = '';
+  $('parentLoginError').textContent = '';
+}
+
+async function loadParentStats(){
+  try {
+    const logRes = await apiGet('/api/study-log');
+    const logs = logRes.data || [];
+    const wrongRes = await apiGet('/api/wrong-notes');
+    const wrongs = wrongRes.data || [];
+    
+    // 통계 계산
+    const totalSessions = logs.length;
+    const totalProblems = logs.reduce((sum, log) => sum + (log.total || 0), 0);
+    const totalCorrect = logs.reduce((sum, log) => sum + (log.correct || 0), 0);
+    const totalTime = logs.reduce((sum, log) => sum + (log.seconds || 0), 0);
+    const totalWrong = wrongs.length;
+    const accuracy = totalProblems > 0 ? Math.round((totalCorrect / totalProblems) * 100) : 0;
+    
+    // 최근 학습 시간
+    const lastStudy = logs.length > 0 ? new Date(logs[0].createdAt).toLocaleString('ko-KR') : '없음';
+    
+    // 요약 통계 표시
+    const summary = $('statsSummary');
+    summary.innerHTML = `
+      <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <div style="font-size: 24px; font-weight: bold; color: #3b82f6;">${totalSessions}회</div>
+        <div style="color: #6b7280; font-size: 14px; margin-top: 5px;">총 학습 세션</div>
+      </div>
+      <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <div style="font-size: 24px; font-weight: bold; color: #10b981;">${totalProblems}문제</div>
+        <div style="color: #6b7280; font-size: 14px; margin-top: 5px;">총 푼 문제</div>
+      </div>
+      <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <div style="font-size: 24px; font-weight: bold; color: #8b5cf6;">${accuracy}%</div>
+        <div style="color: #6b7280; font-size: 14px; margin-top: 5px;">정답률</div>
+      </div>
+      <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <div style="font-size: 24px; font-weight: bold; color: #ef4444;">${totalWrong}문제</div>
+        <div style="color: #6b7280; font-size: 14px; margin-top: 5px;">틀린 문제</div>
+      </div>
+      <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <div style="font-size: 24px; font-weight: bold; color: #f59e0b;">${fmtTime(totalTime)}</div>
+        <div style="color: #6b7280; font-size: 14px; margin-top: 5px;">총 학습 시간</div>
+      </div>
+      <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); grid-column: span 2;">
+        <div style="font-size: 16px; font-weight: 600; color: #1f2937;">마지막 학습</div>
+        <div style="color: #6b7280; font-size: 14px; margin-top: 5px;">${lastStudy}</div>
+      </div>
+    `;
+    
+    // 상세 학습 기록 표시
+    const logList = $('studyLogList');
+    if(logs.length === 0){
+      logList.innerHTML = '<div style="text-align: center; color: #9ca3af; padding: 40px;">아직 학습 기록이 없습니다.</div>';
+      return;
+    }
+    
+    logList.innerHTML = logs.map(log => {
+      const date = new Date(log.createdAt);
+      const modeText = log.mode === 'practice' ? '📝 연습' : '📋 모의고사';
+      const accuracy = log.total > 0 ? Math.round((log.correct / log.total) * 100) : 0;
+      const timeText = log.seconds ? fmtTime(log.seconds) : '-';
+      
+      return `
+        <div style="background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 15px; margin-bottom: 10px;">
+          <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px;">
+            <div>
+              <div style="font-weight: 600; color: #1f2937; margin-bottom: 5px;">
+                ${modeText} | ${log.unitId || '단원 정보 없음'}
+              </div>
+              <div style="font-size: 12px; color: #9ca3af;">
+                ${date.toLocaleString('ko-KR')}
+              </div>
+            </div>
+            <div style="background: ${accuracy >= 80 ? '#d1fae5' : accuracy >= 60 ? '#fef3c7' : '#fee2e2'}; 
+                        color: ${accuracy >= 80 ? '#065f46' : accuracy >= 60 ? '#92400e' : '#991b1b'};
+                        padding: 4px 12px; border-radius: 12px; font-weight: 600; font-size: 14px;">
+              ${accuracy}%
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; font-size: 14px;">
+            <div>
+              <span style="color: #6b7280;">난이도:</span>
+              <span style="font-weight: 600; margin-left: 5px;">${log.difficulty || '-'}</span>
+            </div>
+            <div>
+              <span style="color: #6b7280;">정답:</span>
+              <span style="color: #10b981; font-weight: 600; margin-left: 5px;">${log.correct || 0}/${log.total || 0}</span>
+            </div>
+            <div>
+              <span style="color: #6b7280;">오답:</span>
+              <span style="color: #ef4444; font-weight: 600; margin-left: 5px;">${(log.total || 0) - (log.correct || 0)}</span>
+            </div>
+            <div>
+              <span style="color: #6b7280;">시간:</span>
+              <span style="font-weight: 600; margin-left: 5px;">${timeText}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+    
+  } catch(err){
+    console.error('학습 통계 로딩 실패:', err);
+    alert('학습 통계를 불러오는데 실패했습니다.');
+  }
+}
+
 async function init(){
   SYLLABUS = await TreeUI.loadJson('/data/syllabus.json');
   CONCEPTS = await TreeUI.loadJson('/data/concepts.json');
@@ -396,8 +541,10 @@ async function init(){
     if(!btn) return;
     setTab(btn.dataset.tab);
     if(btn.dataset.tab==='wrong') loadWrong();
+    if(btn.dataset.tab==='parent' && parentLoggedIn) loadParentStats();
   });
 
+  $('homeBtn').addEventListener('click', goHome);
   $('startPracticeBtn').addEventListener('click', startPractice);
   $('openExamBtn').addEventListener('click', ()=>setTab('exam'));
 
@@ -414,6 +561,12 @@ async function init(){
 
   $('saveFixedBtn').addEventListener('click', buildAndSaveFixedDB);
   $('loadFixedBtn').addEventListener('click', loadFixedDB);
+
+  // 부모 모드
+  $('parentLoginBtn').addEventListener('click', parentLogin);
+  $('parentPassword').addEventListener('keydown', (e)=>{ if(e.key==='Enter') parentLogin(); });
+  $('parentLogoutBtn').addEventListener('click', parentLogout);
+  $('refreshStatsBtn').addEventListener('click', loadParentStats);
 
   updateConcept();
 }
