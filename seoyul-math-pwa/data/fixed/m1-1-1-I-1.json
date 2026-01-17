@@ -1,0 +1,955 @@
+{
+  "meta": {
+    "unitId": "m1-1-1-I-1",
+    "perDifficulty": 20,
+    "createdAt": "2026-01-17T09:57:32.275375"
+  },
+  "problems": {
+    "1": [
+      {
+        "id": "P2750293183691192",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 1,
+        "question": "3136을(를) 소인수분해하시오. (예: 2^3 × 3)",
+        "answer": "2^6 × 7^2",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "작은 소수부터 나누어 보세요.",
+        "explain": "3136 = 2^6 × 7^2",
+        "tags": [
+          "소인수분해"
+        ]
+      },
+      {
+        "id": "P7406677446676758",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 1,
+        "question": "588을(를) 소인수분해하시오. (예: 2^3 × 3)",
+        "answer": "2^2 × 3 × 7^2",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "작은 소수부터 나누어 보세요.",
+        "explain": "588 = 2^2 × 3 × 7^2",
+        "tags": [
+          "소인수분해"
+        ]
+      },
+      {
+        "id": "P0297972194380703",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 1,
+        "question": "4000을(를) 소인수분해하시오. (예: 2^3 × 3)",
+        "answer": "2^5 × 5^3",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "작은 소수부터 나누어 보세요.",
+        "explain": "4000 = 2^5 × 5^3",
+        "tags": [
+          "소인수분해"
+        ]
+      },
+      {
+        "id": "P1988376506866485",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 1,
+        "question": "588을(를) 소인수분해하시오. (예: 2^3 × 3)",
+        "answer": "2^2 × 3 × 7^2",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "작은 소수부터 나누어 보세요.",
+        "explain": "588 = 2^2 × 3 × 7^2",
+        "tags": [
+          "소인수분해"
+        ]
+      },
+      {
+        "id": "P4492090462838536",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 1,
+        "question": "648000을(를) 소인수분해하시오. (예: 2^3 × 3)",
+        "answer": "2^6 × 3^4 × 5^3",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "작은 소수부터 나누어 보세요.",
+        "explain": "648000 = 2^6 × 3^4 × 5^3",
+        "tags": [
+          "소인수분해"
+        ]
+      },
+      {
+        "id": "P4226143981535025",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 1,
+        "question": "1960을(를) 소인수분해하시오. (예: 2^3 × 3)",
+        "answer": "2^3 × 5 × 7^2",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "작은 소수부터 나누어 보세요.",
+        "explain": "1960 = 2^3 × 5 × 7^2",
+        "tags": [
+          "소인수분해"
+        ]
+      },
+      {
+        "id": "P1022102765198487",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 1,
+        "question": "840을(를) 소인수분해하시오. (예: 2^3 × 3)",
+        "answer": "2^3 × 3 × 5 × 7",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "작은 소수부터 나누어 보세요.",
+        "explain": "840 = 2^3 × 3 × 5 × 7",
+        "tags": [
+          "소인수분해"
+        ]
+      },
+      {
+        "id": "P6037260313668911",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 1,
+        "question": "2800을(를) 소인수분해하시오. (예: 2^3 × 3)",
+        "answer": "2^4 × 5^2 × 7",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "작은 소수부터 나누어 보세요.",
+        "explain": "2800 = 2^4 × 5^2 × 7",
+        "tags": [
+          "소인수분해"
+        ]
+      },
+      {
+        "id": "P0788001980784581",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 1,
+        "question": "378을(를) 소인수분해하시오. (예: 2^3 × 3)",
+        "answer": "2 × 3^3 × 7",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "작은 소수부터 나누어 보세요.",
+        "explain": "378 = 2 × 3^3 × 7",
+        "tags": [
+          "소인수분해"
+        ]
+      },
+      {
+        "id": "P1922885902566599",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 1,
+        "question": "793800을(를) 소인수분해하시오. (예: 2^3 × 3)",
+        "answer": "2^3 × 3^4 × 5^2 × 7^2",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "작은 소수부터 나누어 보세요.",
+        "explain": "793800 = 2^3 × 3^4 × 5^2 × 7^2",
+        "tags": [
+          "소인수분해"
+        ]
+      },
+      {
+        "id": "P9852215206607578",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 1,
+        "question": "70을(를) 소인수분해하시오. (예: 2^3 × 3)",
+        "answer": "2 × 5 × 7",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "작은 소수부터 나누어 보세요.",
+        "explain": "70 = 2 × 5 × 7",
+        "tags": [
+          "소인수분해"
+        ]
+      },
+      {
+        "id": "P4534103023684355",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 1,
+        "question": "3500을(를) 소인수분해하시오. (예: 2^3 × 3)",
+        "answer": "2^2 × 5^3 × 7",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "작은 소수부터 나누어 보세요.",
+        "explain": "3500 = 2^2 × 5^3 × 7",
+        "tags": [
+          "소인수분해"
+        ]
+      },
+      {
+        "id": "P2095070307714877",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 1,
+        "question": "4200을(를) 소인수분해하시오. (예: 2^3 × 3)",
+        "answer": "2^3 × 3 × 5^2 × 7",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "작은 소수부터 나누어 보세요.",
+        "explain": "4200 = 2^3 × 3 × 5^2 × 7",
+        "tags": [
+          "소인수분해"
+        ]
+      },
+      {
+        "id": "P7291267979503492",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 1,
+        "question": "1960을(를) 소인수분해하시오. (예: 2^3 × 3)",
+        "answer": "2^3 × 5 × 7^2",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "작은 소수부터 나누어 보세요.",
+        "explain": "1960 = 2^3 × 5 × 7^2",
+        "tags": [
+          "소인수분해"
+        ]
+      },
+      {
+        "id": "P9895233506365952",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 1,
+        "question": "94500을(를) 소인수분해하시오. (예: 2^3 × 3)",
+        "answer": "2^2 × 3^3 × 5^3 × 7",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "작은 소수부터 나누어 보세요.",
+        "explain": "94500 = 2^2 × 3^3 × 5^3 × 7",
+        "tags": [
+          "소인수분해"
+        ]
+      },
+      {
+        "id": "P3242827344153218",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 1,
+        "question": "1270080을(를) 소인수분해하시오. (예: 2^3 × 3)",
+        "answer": "2^6 × 3^4 × 5 × 7^2",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "작은 소수부터 나누어 보세요.",
+        "explain": "1270080 = 2^6 × 3^4 × 5 × 7^2",
+        "tags": [
+          "소인수분해"
+        ]
+      },
+      {
+        "id": "P4011647870223289",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 1,
+        "question": "42을(를) 소인수분해하시오. (예: 2^3 × 3)",
+        "answer": "2 × 3 × 7",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "작은 소수부터 나누어 보세요.",
+        "explain": "42 = 2 × 3 × 7",
+        "tags": [
+          "소인수분해"
+        ]
+      },
+      {
+        "id": "P6554386652948800",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 1,
+        "question": "150을(를) 소인수분해하시오. (예: 2^3 × 3)",
+        "answer": "2 × 3 × 5^2",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "작은 소수부터 나누어 보세요.",
+        "explain": "150 = 2 × 3 × 5^2",
+        "tags": [
+          "소인수분해"
+        ]
+      },
+      {
+        "id": "P1396303195255063",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 1,
+        "question": "15120을(를) 소인수분해하시오. (예: 2^3 × 3)",
+        "answer": "2^4 × 3^3 × 5 × 7",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "작은 소수부터 나누어 보세요.",
+        "explain": "15120 = 2^4 × 3^3 × 5 × 7",
+        "tags": [
+          "소인수분해"
+        ]
+      },
+      {
+        "id": "P5845859902235405",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 1,
+        "question": "6350400을(를) 소인수분해하시오. (예: 2^3 × 3)",
+        "answer": "2^6 × 3^4 × 5^2 × 7^2",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "작은 소수부터 나누어 보세요.",
+        "explain": "6350400 = 2^6 × 3^4 × 5^2 × 7^2",
+        "tags": [
+          "소인수분해"
+        ]
+      }
+    ],
+    "2": [
+      {
+        "id": "P2193207591572833",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 2,
+        "question": "21600의 약수의 개수를 구하시오.",
+        "answer": "72",
+        "answerType": "number",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "소인수분해 후 (지수+1)을 곱합니다.",
+        "explain": "약수개수=6×4×3=72",
+        "tags": [
+          "약수",
+          "약수의개수"
+        ]
+      },
+      {
+        "id": "P0909094121737938",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 2,
+        "question": "40500의 약수의 개수를 구하시오.",
+        "answer": "60",
+        "answerType": "number",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "소인수분해 후 (지수+1)을 곱합니다.",
+        "explain": "약수개수=3×5×4=60",
+        "tags": [
+          "약수",
+          "약수의개수"
+        ]
+      },
+      {
+        "id": "P6274460417030900",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 2,
+        "question": "10의 약수의 개수를 구하시오.",
+        "answer": "4",
+        "answerType": "number",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "소인수분해 후 (지수+1)을 곱합니다.",
+        "explain": "약수개수=2×1×2=4",
+        "tags": [
+          "약수",
+          "약수의개수"
+        ]
+      },
+      {
+        "id": "P3847673116745000",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 2,
+        "question": "1296의 약수의 개수를 구하시오.",
+        "answer": "25",
+        "answerType": "number",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "소인수분해 후 (지수+1)을 곱합니다.",
+        "explain": "약수개수=5×5×1=25",
+        "tags": [
+          "약수",
+          "약수의개수"
+        ]
+      },
+      {
+        "id": "P9710783776136182",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 2,
+        "question": "21600의 약수의 개수를 구하시오.",
+        "answer": "72",
+        "answerType": "number",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "소인수분해 후 (지수+1)을 곱합니다.",
+        "explain": "약수개수=6×4×3=72",
+        "tags": [
+          "약수",
+          "약수의개수"
+        ]
+      },
+      {
+        "id": "P7685987326574459",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 2,
+        "question": "50의 약수의 개수를 구하시오.",
+        "answer": "6",
+        "answerType": "number",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "소인수분해 후 (지수+1)을 곱합니다.",
+        "explain": "약수개수=2×1×3=6",
+        "tags": [
+          "약수",
+          "약수의개수"
+        ]
+      },
+      {
+        "id": "P4347652506691050",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 2,
+        "question": "200의 약수의 개수를 구하시오.",
+        "answer": "12",
+        "answerType": "number",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "소인수분해 후 (지수+1)을 곱합니다.",
+        "explain": "약수개수=4×1×3=12",
+        "tags": [
+          "약수",
+          "약수의개수"
+        ]
+      },
+      {
+        "id": "P9718880988701142",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 2,
+        "question": "400의 약수의 개수를 구하시오.",
+        "answer": "15",
+        "answerType": "number",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "소인수분해 후 (지수+1)을 곱합니다.",
+        "explain": "약수개수=5×1×3=15",
+        "tags": [
+          "약수",
+          "약수의개수"
+        ]
+      },
+      {
+        "id": "P8705185698367669",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 2,
+        "question": "324의 약수의 개수를 구하시오.",
+        "answer": "15",
+        "answerType": "number",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "소인수분해 후 (지수+1)을 곱합니다.",
+        "explain": "약수개수=3×5×1=15",
+        "tags": [
+          "약수",
+          "약수의개수"
+        ]
+      },
+      {
+        "id": "P1528392685496348",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 2,
+        "question": "3240의 약수의 개수를 구하시오.",
+        "answer": "40",
+        "answerType": "number",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "소인수분해 후 (지수+1)을 곱합니다.",
+        "explain": "약수개수=4×5×2=40",
+        "tags": [
+          "약수",
+          "약수의개수"
+        ]
+      },
+      {
+        "id": "P5989445844602290",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 2,
+        "question": "324의 약수의 개수를 구하시오.",
+        "answer": "15",
+        "answerType": "number",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "소인수분해 후 (지수+1)을 곱합니다.",
+        "explain": "약수개수=3×5×1=15",
+        "tags": [
+          "약수",
+          "약수의개수"
+        ]
+      },
+      {
+        "id": "P9290986162646170",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 2,
+        "question": "16의 약수의 개수를 구하시오.",
+        "answer": "5",
+        "answerType": "number",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "소인수분해 후 (지수+1)을 곱합니다.",
+        "explain": "약수개수=5×1×1=5",
+        "tags": [
+          "약수",
+          "약수의개수"
+        ]
+      },
+      {
+        "id": "P2408715924472331",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 2,
+        "question": "24의 약수의 개수를 구하시오.",
+        "answer": "8",
+        "answerType": "number",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "소인수분해 후 (지수+1)을 곱합니다.",
+        "explain": "약수개수=4×2×1=8",
+        "tags": [
+          "약수",
+          "약수의개수"
+        ]
+      },
+      {
+        "id": "P7319075948446278",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 2,
+        "question": "32의 약수의 개수를 구하시오.",
+        "answer": "6",
+        "answerType": "number",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "소인수분해 후 (지수+1)을 곱합니다.",
+        "explain": "약수개수=6×1×1=6",
+        "tags": [
+          "약수",
+          "약수의개수"
+        ]
+      },
+      {
+        "id": "P1283914644997628",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 2,
+        "question": "810의 약수의 개수를 구하시오.",
+        "answer": "20",
+        "answerType": "number",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "소인수분해 후 (지수+1)을 곱합니다.",
+        "explain": "약수개수=2×5×2=20",
+        "tags": [
+          "약수",
+          "약수의개수"
+        ]
+      },
+      {
+        "id": "P2650566289400591",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 2,
+        "question": "6480의 약수의 개수를 구하시오.",
+        "answer": "50",
+        "answerType": "number",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "소인수분해 후 (지수+1)을 곱합니다.",
+        "explain": "약수개수=5×5×2=50",
+        "tags": [
+          "약수",
+          "약수의개수"
+        ]
+      },
+      {
+        "id": "P9289134930021768",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 2,
+        "question": "4320의 약수의 개수를 구하시오.",
+        "answer": "48",
+        "answerType": "number",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "소인수분해 후 (지수+1)을 곱합니다.",
+        "explain": "약수개수=6×4×2=48",
+        "tags": [
+          "약수",
+          "약수의개수"
+        ]
+      },
+      {
+        "id": "P9951493566608946",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 2,
+        "question": "4500의 약수의 개수를 구하시오.",
+        "answer": "36",
+        "answerType": "number",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "소인수분해 후 (지수+1)을 곱합니다.",
+        "explain": "약수개수=3×3×4=36",
+        "tags": [
+          "약수",
+          "약수의개수"
+        ]
+      },
+      {
+        "id": "P1210041958682657",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 2,
+        "question": "27000의 약수의 개수를 구하시오.",
+        "answer": "64",
+        "answerType": "number",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "소인수분해 후 (지수+1)을 곱합니다.",
+        "explain": "약수개수=4×4×4=64",
+        "tags": [
+          "약수",
+          "약수의개수"
+        ]
+      },
+      {
+        "id": "P0210342600070588",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 2,
+        "question": "100의 약수의 개수를 구하시오.",
+        "answer": "9",
+        "answerType": "number",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "소인수분해 후 (지수+1)을 곱합니다.",
+        "explain": "약수개수=3×1×3=9",
+        "tags": [
+          "약수",
+          "약수의개수"
+        ]
+      }
+    ],
+    "3": [
+      {
+        "id": "P0709930860090325",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 3,
+        "question": "두 수 20, 5는 서로소인가? (서로소/서로소 아님)",
+        "answer": "서로소 아님",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "최대공약수가 1이면 서로소입니다.",
+        "explain": "gcd(20,5)=5 → 서로소 아님",
+        "tags": [
+          "서로소",
+          "판정"
+        ]
+      },
+      {
+        "id": "P9054200130061280",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 3,
+        "question": "두 수 24, 2는 서로소인가? (서로소/서로소 아님)",
+        "answer": "서로소 아님",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "최대공약수가 1이면 서로소입니다.",
+        "explain": "gcd(24,2)=2 → 서로소 아님",
+        "tags": [
+          "서로소",
+          "판정"
+        ]
+      },
+      {
+        "id": "P6689777782962806",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 3,
+        "question": "두 수 35, 3는 서로소인가? (서로소/서로소 아님)",
+        "answer": "서로소",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "최대공약수가 1이면 서로소입니다.",
+        "explain": "gcd(35,3)=1 → 서로소",
+        "tags": [
+          "서로소",
+          "판정"
+        ]
+      },
+      {
+        "id": "P2429972423957245",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 3,
+        "question": "두 수 35, 10는 서로소인가? (서로소/서로소 아님)",
+        "answer": "서로소 아님",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "최대공약수가 1이면 서로소입니다.",
+        "explain": "gcd(35,10)=5 → 서로소 아님",
+        "tags": [
+          "서로소",
+          "판정"
+        ]
+      },
+      {
+        "id": "P0969308142288233",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 3,
+        "question": "두 수 18, 8는 서로소인가? (서로소/서로소 아님)",
+        "answer": "서로소 아님",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "최대공약수가 1이면 서로소입니다.",
+        "explain": "gcd(18,8)=2 → 서로소 아님",
+        "tags": [
+          "서로소",
+          "판정"
+        ]
+      },
+      {
+        "id": "P4111022760497380",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 3,
+        "question": "두 수 8, 7는 서로소인가? (서로소/서로소 아님)",
+        "answer": "서로소",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "최대공약수가 1이면 서로소입니다.",
+        "explain": "gcd(8,7)=1 → 서로소",
+        "tags": [
+          "서로소",
+          "판정"
+        ]
+      },
+      {
+        "id": "P4026212821022687",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 3,
+        "question": "두 수 4, 12는 서로소인가? (서로소/서로소 아님)",
+        "answer": "서로소 아님",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "최대공약수가 1이면 서로소입니다.",
+        "explain": "gcd(4,12)=4 → 서로소 아님",
+        "tags": [
+          "서로소",
+          "판정"
+        ]
+      },
+      {
+        "id": "P1902089084408115",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 3,
+        "question": "두 수 21, 3는 서로소인가? (서로소/서로소 아님)",
+        "answer": "서로소 아님",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "최대공약수가 1이면 서로소입니다.",
+        "explain": "gcd(21,3)=3 → 서로소 아님",
+        "tags": [
+          "서로소",
+          "판정"
+        ]
+      },
+      {
+        "id": "P1834880357872332",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 3,
+        "question": "두 수 9, 4는 서로소인가? (서로소/서로소 아님)",
+        "answer": "서로소",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "최대공약수가 1이면 서로소입니다.",
+        "explain": "gcd(9,4)=1 → 서로소",
+        "tags": [
+          "서로소",
+          "판정"
+        ]
+      },
+      {
+        "id": "P8080222447317026",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 3,
+        "question": "두 수 63, 5는 서로소인가? (서로소/서로소 아님)",
+        "answer": "서로소",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "최대공약수가 1이면 서로소입니다.",
+        "explain": "gcd(63,5)=1 → 서로소",
+        "tags": [
+          "서로소",
+          "판정"
+        ]
+      },
+      {
+        "id": "P9689962572847512",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 3,
+        "question": "두 수 20, 3는 서로소인가? (서로소/서로소 아님)",
+        "answer": "서로소",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "최대공약수가 1이면 서로소입니다.",
+        "explain": "gcd(20,3)=1 → 서로소",
+        "tags": [
+          "서로소",
+          "판정"
+        ]
+      },
+      {
+        "id": "P4856411254507185",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 3,
+        "question": "두 수 5, 4는 서로소인가? (서로소/서로소 아님)",
+        "answer": "서로소",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "최대공약수가 1이면 서로소입니다.",
+        "explain": "gcd(5,4)=1 → 서로소",
+        "tags": [
+          "서로소",
+          "판정"
+        ]
+      },
+      {
+        "id": "P3789731189769161",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 3,
+        "question": "두 수 15, 8는 서로소인가? (서로소/서로소 아님)",
+        "answer": "서로소",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "최대공약수가 1이면 서로소입니다.",
+        "explain": "gcd(15,8)=1 → 서로소",
+        "tags": [
+          "서로소",
+          "판정"
+        ]
+      },
+      {
+        "id": "P2852492289469203",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 3,
+        "question": "두 수 8, 6는 서로소인가? (서로소/서로소 아님)",
+        "answer": "서로소 아님",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "최대공약수가 1이면 서로소입니다.",
+        "explain": "gcd(8,6)=2 → 서로소 아님",
+        "tags": [
+          "서로소",
+          "판정"
+        ]
+      },
+      {
+        "id": "P1547968252740641",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 3,
+        "question": "두 수 10, 12는 서로소인가? (서로소/서로소 아님)",
+        "answer": "서로소 아님",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "최대공약수가 1이면 서로소입니다.",
+        "explain": "gcd(10,12)=2 → 서로소 아님",
+        "tags": [
+          "서로소",
+          "판정"
+        ]
+      },
+      {
+        "id": "P7479755603790641",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 3,
+        "question": "두 수 12, 5는 서로소인가? (서로소/서로소 아님)",
+        "answer": "서로소",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "최대공약수가 1이면 서로소입니다.",
+        "explain": "gcd(12,5)=1 → 서로소",
+        "tags": [
+          "서로소",
+          "판정"
+        ]
+      },
+      {
+        "id": "P5028503829195136",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 3,
+        "question": "두 수 2, 2는 서로소인가? (서로소/서로소 아님)",
+        "answer": "서로소 아님",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "최대공약수가 1이면 서로소입니다.",
+        "explain": "gcd(2,2)=2 → 서로소 아님",
+        "tags": [
+          "서로소",
+          "판정"
+        ]
+      },
+      {
+        "id": "P8513425453441215",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 3,
+        "question": "두 수 20, 4는 서로소인가? (서로소/서로소 아님)",
+        "answer": "서로소 아님",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "최대공약수가 1이면 서로소입니다.",
+        "explain": "gcd(20,4)=4 → 서로소 아님",
+        "tags": [
+          "서로소",
+          "판정"
+        ]
+      },
+      {
+        "id": "P4037755513182774",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 3,
+        "question": "두 수 9, 11는 서로소인가? (서로소/서로소 아님)",
+        "answer": "서로소",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "최대공약수가 1이면 서로소입니다.",
+        "explain": "gcd(9,11)=1 → 서로소",
+        "tags": [
+          "서로소",
+          "판정"
+        ]
+      },
+      {
+        "id": "P4192249153358724",
+        "unitId": "m1-1-1-I-1",
+        "difficulty": 3,
+        "question": "두 수 22, 5는 서로소인가? (서로소/서로소 아님)",
+        "answer": "서로소",
+        "answerType": "string",
+        "tolerance": 0,
+        "unitLabel": "",
+        "hint": "최대공약수가 1이면 서로소입니다.",
+        "explain": "gcd(22,5)=1 → 서로소",
+        "tags": [
+          "서로소",
+          "판정"
+        ]
+      }
+    ]
+  }
+}

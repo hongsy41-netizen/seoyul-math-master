@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>서율이 중1 수학 PWA</title>
+
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="theme-color" content="#1f2937" />
+  <link rel="stylesheet" href="/css/app.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo" title="Seoyul Math">Σ</div>
+      <div class="brand-text">
+        <div class="title">서율이 중1 수학</div>
+        <div class="subtitle">개념 · 문제 · 오답 · 모의고사</div>
+      </div>
+    </div>
+
+    <nav class="tabs" id="tabs">
+      <button class="tab active" data-tab="concept">📘 개념</button>
+      <button class="tab" data-tab="practice">🧩 문제</button>
+      <button class="tab" data-tab="wrong">🧷 오답</button>
+      <button class="tab" data-tab="exam">📝 모의고사</button>
+      <button class="tab" data-tab="settings">⚙️ 설정</button>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-title">목차</div>
+        <div class="sidebar-sub">중1 (1-1 / 1-2)</div>
+      </div>
+      <div class="tree" id="tree"></div>
+
+      <div class="sidebar-actions">
+        <button class="btn" id="saveFixedBtn" title="선택 단원 고정 DB(각 난이도 2000문항) 생성/저장">💾 단원DB 생성/저장</button>
+        <button class="btn" id="loadFixedBtn" title="저장된 고정 DB 불러오기">📂 단원DB 불러오기</button>
+      </div>
+      <div class="sidebar-hint" id="fixedDbHint">고정 DB: 미사용</div>
+    </aside>
+
+    <section class="content">
+      <div class="content-header">
+        <div class="breadcrumb" id="breadcrumb">단원을 선택하세요</div>
+
+        <div class="controls">
+          <label class="pill">
+            난이도
+            <select id="difficulty">
+              <option value="1">1 (계산/기본)</option>
+              <option value="2">2 (대표유형)</option>
+              <option value="3">3 (응용/서술형)</option>
+            </select>
+          </label>
+
+          <label class="pill">
+            연습문항
+            <select id="practiceCount">
+              <option value="10">10</option>
+              <option value="20" selected>20</option>
+              <option value="30">30</option>
+            </select>
+          </label>
+
+          <button class="btn primary" id="startPracticeBtn">▶️ 연습 시작</button>
+          <button class="btn" id="openExamBtn">📝 모의고사</button>
+        </div>
+      </div>
+
+      <!-- 개념 -->
+      <section class="panel active" id="panel-concept">
+        <h2 class="panel-title">개념</h2>
+        <div class="card">
+          <div class="card-title" id="conceptTitle">단원을 선택하세요</div>
+          <div class="card-body" id="conceptBody">왼쪽 목차에서 단원을 고르면 여기에 개념 요약이 나옵니다.</div>
+        </div>
+      </section>
+
+      <!-- 문제(연습) -->
+      <section class="panel" id="panel-practice">
+        <h2 class="panel-title">문제(연습)</h2>
+        <div class="card">
+          <div class="row">
+            <div class="meta" id="practiceMeta">준비 중...</div>
+            <div class="meta-right" id="practiceTimer">⏱ 00:00</div>
+          </div>
+          <div class="qbox" id="practiceQuestion">연습을 시작하세요.</div>
+
+          <div class="answer-row">
+            <input id="practiceAnswer" class="answer" placeholder="정답 입력 (예: 7, -3, 2.5)" />
+            <span class="unit" id="practiceUnit"></span>
+            <button class="btn primary" id="checkBtn">✅ 정답확인</button>
+            <button class="btn" id="hintBtn">💡 힌트</button>
+            <button class="btn" id="skipBtn">⏭ 스킵</button>
+          </div>
+
+          <div class="feedback" id="practiceFeedback"></div>
+        </div>
+      </section>
+
+      <!-- 오답 -->
+      <section class="panel" id="panel-wrong">
+        <h2 class="panel-title">오답노트</h2>
+        <div class="split">
+          <div class="card">
+            <div class="row">
+              <div class="card-title">오답 목록</div>
+              <div class="row-actions">
+                <button class="btn" id="refreshWrongBtn">🔄 새로고침</button>
+                <button class="btn danger" id="clearWrongBtn">🗑 전체삭제</button>
+              </div>
+            </div>
+            <div class="list" id="wrongList"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">오답 상세</div>
+            <div class="card-body" id="wrongDetail">왼쪽에서 오답을 선택하세요.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 모의고사 -->
+      <section class="panel" id="panel-exam">
+        <h2 class="panel-title">모의고사(시험지)</h2>
+
+        <div class="card">
+          <div class="row">
+            <div class="meta" id="examMeta">현재 선택 단원에서만 출제됩니다.</div>
+            <div class="row-actions">
+              <label class="pill">
+                문항수
+                <select id="examCount">
+                  <option value="10">10</option>
+                  <option value="20">20</option>
+                </select>
+              </label>
+              <button class="btn primary" id="startExamBtn">📝 시험 시작</button>
+              <button class="btn" id="submitExamBtn">📌 제출(일괄채점)</button>
+            </div>
+          </div>
+
+          <div class="exam-sheet" id="examSheet"></div>
+          <div class="feedback" id="examResult"></div>
+        </div>
+      </section>
+
+      <!-- 설정 -->
+      <section class="panel" id="panel-settings">
+        <h2 class="panel-title">설정</h2>
+        <div class="card">
+          <div class="card-body">
+            <div class="kline">• 오답/학습로그는 <code>storage</code> 폴더의 JSON 파일로 저장됩니다.</div>
+            <div class="kline">• 고정 DB는 <code>data/fixed</code>에 단원별 JSON로 저장됩니다.</div>
+            <div class="kline">• PWA 설치(크롬): 주소창 옆 “설치” 버튼 또는 메뉴 → 앱 설치</div>
+          </div>
+        </div>
+      </section>
+
+    </section>
+  </main>
+
+  <script src="/js/tree.js"></script>
+  <script src="/js/generator/core.js"></script>
+  <script src="/js/generator/templates_1_1.js"></script>
+  <script src="/js/generator/templates_1_2.js"></script>
+  <script src="/js/generator/generate.js"></script>
+  <script src="/js/app.js"></script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js").catch(()=>{});
+    }
+  </script>
+</body>
+</html>

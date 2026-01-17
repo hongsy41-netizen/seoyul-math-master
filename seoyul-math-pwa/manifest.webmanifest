@@ -1,0 +1,9 @@
+{
+  "name": "서율이 중1 수학",
+  "short_name": "서율수학",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#1f2937",
+  "icons": []
+}
