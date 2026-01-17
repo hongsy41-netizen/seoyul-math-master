@@ -266,6 +266,80 @@ T11.push({
   }
 });
 
+// 정수와 유리수 (난이도2)
+T11.push({
+  key:'rational_number_concept',
+  unitId:'m1-1-1-II-1',
+  difficulty: 2,
+  tags:['유리수','개념'],
+  gen(){
+    const {randInt, choice} = GenCore;
+    const questions = [
+      {q: '유리수가 아닌 것은? (보기: 1/2, -3, 0.5, √2)', a: '√2'},
+      {q: '분수로 나타낼 수 있는 것은? (보기: π, -2/3, √3, ∞)', a: '-2/3'},
+      {q: '정수이면서 유리수인 것은? (보기: -5, 1.5, 2/3, √4)', a: choice(['-5', '√4'])},
+    ];
+    const picked = choice(questions);
+    return {
+      type:'short',
+      question: picked.q,
+      answer: picked.a,
+      answerType:'string',
+      tolerance:0,
+      unitLabel:'',
+      hint:'유리수는 a/b (b≠0) 꼴로 나타낼 수 있는 수입니다.',
+      explain:`정답은 ${picked.a}입니다.`
+    };
+  }
+});
+
+// 정수와 유리수 (난이도3)
+T11.push({
+  key:'number_line_comparison',
+  unitId:'m1-1-1-II-1',
+  difficulty: 3,
+  tags:['수직선','크기비교'],
+  gen(){
+    const {randInt, choice} = GenCore;
+    const a = randInt(-10, -1);
+    const b = randInt(1, 10);
+    const c = randInt(-5, 5);
+    const scenarios = [
+      () => {
+        const nums = [a, b, c, 0].sort((x, y) => x - y);
+        return {
+          question: `다음 수를 작은 것부터 순서대로 나열하시오: ${a}, ${b}, ${c}, 0 (예: -5,-3,0,2)`,
+          answer: nums.join(','),
+          hint: '수직선에서 오른쪽에 있을수록 큰 수입니다.',
+          explain: `작은 순서: ${nums.join(', ')}`
+        };
+      },
+      () => {
+        const frac1 = choice([-1/2, -1/3, 1/2, 1/3, 2/3]);
+        const frac2 = choice([-2/3, -1/4, 1/4, 3/4]);
+        const bigger = frac1 > frac2 ? frac1 : frac2;
+        return {
+          question: `${frac1}과(와) ${frac2} 중 더 큰 수는?`,
+          answer: String(bigger),
+          hint: '소수로 바꿔서 비교하거나 통분하여 비교하세요.',
+          explain: `${frac1} ${frac1 > frac2 ? '>' : '<'} ${frac2}, 답: ${bigger}`
+        };
+      }
+    ];
+    const picked = choice(scenarios)();
+    return {
+      type:'short',
+      question: picked.question,
+      answer: picked.answer,
+      answerType:'string',
+      tolerance:0,
+      unitLabel:'',
+      hint: picked.hint,
+      explain: picked.explain
+    };
+  }
+});
+
 // 정수와 유리수의 곱셈/나눗셈 (난이도2)
 T11.push({
   key:'integer_multiply_divide',
@@ -464,6 +538,55 @@ T11.push({
       unitLabel:'',
       hint:'주어진 x값을 식에 대입하여 c를 구하세요.',
       explain:`${a}×${x} ${bStr} = ${a*x} ${bStr} = ${c}`
+    };
+  }
+});
+
+// 방정식의 해 (난이도2)
+T11.push({
+  key:'equation_solution_medium',
+  unitId:'m1-1-1-III-3',
+  difficulty: 2,
+  tags:['방정식','해','대입'],
+  gen(){
+    const {randInt, formatSign, choice} = GenCore;
+    const scenarios = [
+      () => {
+        const x = randInt(-5, 8);
+        const a = randInt(2, 6);
+        const b = randInt(-10, 10);
+        const c = a * x + b;
+        return {
+          question: `x = ${x}이 방정식 ${a}x ${formatSign(b, 'middle')} = ${c}의 해인지 확인하시오. (맞으면 O, 틀리면 X)`,
+          answer: 'O',
+          hint: 'x를 대입해서 좌변과 우변이 같은지 확인하세요.',
+          explain: `${a}×${x} ${formatSign(b, 'middle')} = ${a*x} ${formatSign(b, 'middle')} = ${c}, 맞음`
+        };
+      },
+      () => {
+        const x = randInt(-5, 8);
+        const wrongX = x + randInt(1, 3);
+        const a = randInt(2, 6);
+        const b = randInt(-10, 10);
+        const c = a * x + b;
+        return {
+          question: `x = ${wrongX}이 방정식 ${a}x ${formatSign(b, 'middle')} = ${c}의 해인지 확인하시오. (맞으면 O, 틀리면 X)`,
+          answer: 'X',
+          hint: 'x를 대입해서 좌변과 우변이 같은지 확인하세요.',
+          explain: `${a}×${wrongX} ${formatSign(b, 'middle')} = ${a*wrongX} ${formatSign(b, 'middle')} = ${a*wrongX + b} ≠ ${c}, 틀림`
+        };
+      }
+    ];
+    const picked = choice(scenarios)();
+    return {
+      type:'short',
+      question: picked.question,
+      answer: picked.answer,
+      answerType:'string',
+      tolerance:0,
+      unitLabel:'',
+      hint: picked.hint,
+      explain: picked.explain
     };
   }
 });

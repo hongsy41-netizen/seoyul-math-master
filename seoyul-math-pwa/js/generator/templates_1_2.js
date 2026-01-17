@@ -122,6 +122,63 @@ T12.push({
   }
 });
 
+// 작도와 합동: 합동조건 응용 (난이도2)
+T12.push({
+  key:'congruence_conditions',
+  unitId:'m1-1-2-I-3',
+  difficulty:2,
+  tags:['합동','합동조건'],
+  gen(){
+    const {randInt, choice} = GenCore;
+    const scenarios = [
+      () => {
+        const a = randInt(3, 8);
+        const b = randInt(4, 9);
+        const c = randInt(5, 10);
+        return {
+          question: `삼각형 ABC에서 AB=${a}cm, BC=${b}cm, CA=${c}cm입니다. 삼각형 DEF와 합동이려면 DE, EF, FD의 길이는? (예: ${a},${b},${c})`,
+          answer: `${a},${b},${c}`,
+          hint: 'SSS 합동: 세 변의 길이가 각각 같으면 합동입니다.',
+          explain: `대응변의 길이가 같아야 하므로 ${a}cm, ${b}cm, ${c}cm`
+        };
+      },
+      () => {
+        const side1 = randInt(4, 10);
+        const angle = randInt(30, 120);
+        const side2 = randInt(4, 10);
+        return {
+          question: `삼각형 ABC에서 AB=${side1}cm, ∠A=${angle}°, AC=${side2}cm입니다. 삼각형 DEF와 SAS 합동이려면 무엇이 같아야 하는가? (예: 두변과끼인각)`,
+          answer: '두변과끼인각',
+          hint: 'SAS 합동: 두 변과 그 끼인각이 같으면 합동입니다.',
+          explain: `SAS 합동 조건은 두 변과 그 끼인각이 같아야 합니다.`
+        };
+      },
+      () => {
+        const angle1 = randInt(30, 70);
+        const angle2 = randInt(40, 80);
+        const side = randInt(5, 12);
+        return {
+          question: `삼각형 ABC에서 ∠A=${angle1}°, ∠B=${angle2}°, AB=${side}cm일 때, ASA 합동 조건은? (예: 한변과양끝각)`,
+          answer: '한변과양끝각',
+          hint: 'ASA 합동: 한 변과 그 양 끝 각이 각각 같으면 합동입니다.',
+          explain: `ASA 합동 조건은 한 변과 그 양 끝 각이 같아야 합니다.`
+        };
+      }
+    ];
+    const picked = choice(scenarios)();
+    return {
+      type:'short',
+      question: picked.question,
+      answer: picked.answer,
+      answerType:'string',
+      tolerance:0,
+      unitLabel:'',
+      hint: picked.hint,
+      explain: picked.explain
+    };
+  }
+});
+
 // 다각형: 내각의 합(난이도2)
 T12.push({
   key:'polygon_sum',
