@@ -534,6 +534,7 @@ async function init(){
     currentUnit = unit;
     fixedDB = null;
     updateConcept();
+    setTab('concept'); // 단원 선택 시 개념 탭으로 자동 전환
   });
 
   $('tabs').addEventListener('click', (e)=>{
