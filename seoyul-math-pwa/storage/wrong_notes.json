@@ -1,5 +1,55 @@
 [
   {
+    "id": "W1768650247971",
+    "createdAt": "2026-01-17T11:44:07.971Z",
+    "unitId": "m1-1-1-III-4",
+    "difficulty": 3,
+    "userAnswer": "1",
+    "reason": "채점 오답",
+    "problem": {
+      "id": "P1768650228066_119",
+      "unitId": "m1-1-1-III-4",
+      "difficulty": 3,
+      "tags": [
+        "일차방정식",
+        "괄호"
+      ],
+      "type": "short",
+      "question": "6(x + -7) + 5x = 1 (괄호를 먼저 풀고 풀어라)",
+      "answer": "-4",
+      "answerType": "number",
+      "tolerance": 0,
+      "unitLabel": "",
+      "hint": "괄호를 풀고 동류항끼리 정리한 후, 이항하세요.",
+      "explain": "6x + -42 + 5x = 1 → 11x = -44 → x = -4"
+    }
+  },
+  {
+    "id": "W1768650247962",
+    "createdAt": "2026-01-17T11:44:07.962Z",
+    "unitId": "m1-1-1-III-4",
+    "difficulty": 3,
+    "userAnswer": "1",
+    "reason": "채점 오답",
+    "problem": {
+      "id": "P1768650228066_119",
+      "unitId": "m1-1-1-III-4",
+      "difficulty": 3,
+      "tags": [
+        "일차방정식",
+        "괄호"
+      ],
+      "type": "short",
+      "question": "6(x + -7) + 5x = 1 (괄호를 먼저 풀고 풀어라)",
+      "answer": "-4",
+      "answerType": "number",
+      "tolerance": 0,
+      "unitLabel": "",
+      "hint": "괄호를 풀고 동류항끼리 정리한 후, 이항하세요.",
+      "explain": "6x + -42 + 5x = 1 → 11x = -44 → x = -4"
+    }
+  },
+  {
     "id": "W1768647915572",
     "createdAt": "2026-01-17T11:05:15.572Z",
     "unitId": "m1-1-1-III-5",

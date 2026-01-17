@@ -503,15 +503,19 @@ T11.push({
     const d = randInt(-10,10);
     // (a+b)x + c + d = (a+b)*x + c + d
     const right = (a+b)*x + c + d;
+    // 자연스러운 표현을 위한 부호 처리
+    const cStr = c >= 0 ? `+ ${c}` : `- ${Math.abs(c)}`;
+    const acStr = (a*c) >= 0 ? `+ ${a*c}` : `- ${Math.abs(a*c)}`;
+    const sumStr = (a+b)*x >= 0 ? `= ${(a+b)*x}` : `= ${(a+b)*x}`;
     return {
       type:'short',
-      question: `${a}(x + ${c}) + ${b}x = ${right - a*c} (괄호를 먼저 풀고 풀어라)`,
+      question: `${a}(x ${cStr}) + ${b}x = ${right - a*c} (괄호를 먼저 풀고 풀어라)`,
       answer: String(x),
       answerType:'number',
       tolerance:0,
       unitLabel:'',
       hint:'괄호를 풀고 동류항끼리 정리한 후, 이항하세요.',
-      explain:`${a}x + ${a*c} + ${b}x = ${right - a*c} → ${a+b}x = ${(a+b)*x} → x = ${x}`
+      explain:`${a}x ${acStr} + ${b}x = ${right - a*c} → ${a+b}x ${sumStr} → x = ${x}`
     };
   }
 });
@@ -927,13 +931,16 @@ T11.push({
     const {randInt} = GenCore;
     const a = randInt(2,5);
     const b = randInt(2,5);
-    const c = randInt(2,5);
-    const d = randInt(2,5);
+    const c = randInt(-5,5);
+    const d = randInt(-5,5);
     const ansX = a - b;
     const ansC = a*c - b*d;
+    // 자연스러운 표현
+    const cStr = c >= 0 ? `+ ${c}` : `- ${Math.abs(c)}`;
+    const dStr = d >= 0 ? `+ ${d}` : `- ${Math.abs(d)}`;
     return {
       type:'short',
-      question: `${a}(x + ${c}) - ${b}(x + ${d})를 간단히 하시오.`,
+      question: `${a}(x ${cStr}) - ${b}(x ${dStr})를 간단히 하시오.`,
       answer: `${ansX}x${ansC>=0?'+':''}${ansC}`,
       answerType:'string',
       tolerance:0,
