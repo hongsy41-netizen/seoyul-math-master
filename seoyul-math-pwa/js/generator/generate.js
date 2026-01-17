@@ -1,7 +1,11 @@
 // Generator v2: works with stable unitId
 
 function allTemplates(){
-  return [...(window.Templates_1_1||[]), ...(window.Templates_1_2||[])];
+  return [
+    ...(window.Templates_1_1||[]), 
+    ...(window.Templates_1_2||[]),
+    ...(window.Templates_external||[])
+  ];
 }
 
 function genProblemsByUnitId(unitId, difficulty, count){

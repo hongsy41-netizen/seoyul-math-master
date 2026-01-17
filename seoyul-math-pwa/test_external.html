@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>외부 DB 통합 테스트</title>
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1 {
+      color: #2c3e50;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 10px;
+    }
+    .stats {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .stats h2 {
+      margin-top: 0;
+      color: #2c3e50;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: white;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+    th {
+      background-color: #3498db;
+      color: white;
+      font-weight: bold;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    .sample-problem {
+      background: white;
+      padding: 20px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border-left: 4px solid #3498db;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .sample-problem h3 {
+      margin-top: 0;
+      color: #2c3e50;
+    }
+    .question {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 10px 0;
+      color: #34495e;
+    }
+    .answer {
+      font-weight: bold;
+      color: #27ae60;
+      margin: 10px 0;
+    }
+    .meta {
+      font-size: 14px;
+      color: #7f8c8d;
+      margin: 5px 0;
+    }
+    .success {
+      background-color: #d4edda;
+      color: #155724;
+      padding: 10px;
+      border-radius: 4px;
+      margin: 10px 0;
+    }
+    .error {
+      background-color: #f8d7da;
+      color: #721c24;
+      padding: 10px;
+      border-radius: 4px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎯 외부 DB 통합 테스트</h1>
+  
+  <div id="status"></div>
+  <div id="stats"></div>
+  <div id="samples"></div>
+
+  <script src="/js/generator/core.js"></script>
+  <script src="/js/generator/templates_1_1.js"></script>
+  <script src="/js/generator/templates_1_2.js"></script>
+  <script src="/js/generator/templates_external.js"></script>
+  <script src="/js/generator/generate.js"></script>
+
+  <script>
+    // 테스트 실행
+    (function() {
+      const statusDiv = document.getElementById('status');
+      const statsDiv = document.getElementById('stats');
+      const samplesDiv = document.getElementById('samples');
+
+      try {
+        // 모든 템플릿 가져오기
+        const allTemplates = window.Generator.allTemplates();
+        
+        if (!allTemplates || allTemplates.length === 0) {
+          throw new Error('템플릿을 로드할 수 없습니다.');
+        }
+
+        // 외부 DB 템플릿 필터링
+        const externalTemplates = allTemplates.filter(t => t.tags && t.tags.includes('외부DB'));
+        
+        statusDiv.innerHTML = `
+          <div class="success">
+            ✅ 외부 DB 통합 성공!<br>
+            총 템플릿 수: <strong>${allTemplates.length}개</strong><br>
+            외부 DB 템플릿: <strong>${externalTemplates.length}개</strong>
+          </div>
+        `;
+
+        // 단원별 통계
+        const byUnit = {};
+        externalTemplates.forEach(t => {
+          if (!byUnit[t.unitId]) {
+            byUnit[t.unitId] = { 1: 0, 2: 0, 3: 0 };
+          }
+          byUnit[t.unitId][t.difficulty]++;
+        });
+
+        // 통계 테이블 생성
+        let statsHtml = `
+          <div class="stats">
+            <h2>📊 단원별 외부 DB 문제 수</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>단원 ID</th>
+                  <th>난이도 1</th>
+                  <th>난이도 2</th>
+                  <th>난이도 3</th>
+                  <th>총계</th>
+                </tr>
+              </thead>
+              <tbody>
+        `;
+
+        Object.keys(byUnit).sort().forEach(unitId => {
+          const counts = byUnit[unitId];
+          const total = counts[1] + counts[2] + counts[3];
+          statsHtml += `
+            <tr>
+              <td>${unitId}</td>
+              <td>${counts[1]}</td>
+              <td>${counts[2]}</td>
+              <td>${counts[3]}</td>
+              <td><strong>${total}</strong></td>
+            </tr>
+          `;
+        });
+
+        statsHtml += `
+              </tbody>
+            </table>
+          </div>
+        `;
+        statsDiv.innerHTML = statsHtml;
+
+        // 샘플 문제 5개 생성
+        let samplesHtml = '<h2>🎯 샘플 문제 (무작위 5개)</h2>';
+        
+        for (let i = 0; i < 5; i++) {
+          const randomTpl = externalTemplates[Math.floor(Math.random() * externalTemplates.length)];
+          const problem = randomTpl.gen();
+          
+          samplesHtml += `
+            <div class="sample-problem">
+              <h3>문제 ${i + 1}</h3>
+              <div class="meta">
+                단원: ${randomTpl.unitId} | 
+                난이도: ${randomTpl.difficulty} | 
+                태그: ${randomTpl.tags.join(', ')}
+              </div>
+              <div class="question">${problem.question}</div>
+              <div class="answer">정답: ${problem.answer}</div>
+              <div class="meta">${problem.hint}</div>
+            </div>
+          `;
+        }
+
+        samplesDiv.innerHTML = samplesHtml;
+
+      } catch (error) {
+        statusDiv.innerHTML = `
+          <div class="error">
+            ❌ 오류 발생: ${error.message}<br>
+            ${error.stack}
+          </div>
+        `;
+      }
+    })();
+  </script>
+</body>
+</html>
