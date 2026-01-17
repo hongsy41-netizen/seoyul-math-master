@@ -139,4 +139,455 @@ T11.push({
   }
 });
 
+// 소인수분해 (난이도2)
+T11.push({
+  key: 'prime_factorization_medium',
+  unitId: 'm1-1-1-I-1',
+  difficulty: 2,
+  tags: ['소인수분해'],
+  gen(){
+    const {randInt, primeFactors, factorsToString} = GenCore;
+    const n = randInt(100, 500);
+    const f = primeFactors(n);
+    return {
+      type:'short',
+      question: `${n}을(를) 소인수분해하시오.`,
+      answer: factorsToString(f),
+      answerType: 'string',
+      tolerance: 0,
+      unitLabel: '',
+      hint: '큰 수도 작은 소수부터 차례로 나누면 됩니다.',
+      explain: `${n} = ${factorsToString(f)}`
+    };
+  }
+});
+
+// 소인수분해 (난이도3)
+T11.push({
+  key: 'prime_factorization_hard',
+  unitId: 'm1-1-1-I-1',
+  difficulty: 3,
+  tags: ['소인수분해'],
+  gen(){
+    const {randInt, primeFactors, factorsToString} = GenCore;
+    const n = randInt(500, 1000);
+    const f = primeFactors(n);
+    return {
+      type:'short',
+      question: `${n}을(를) 소인수분해하시오.`,
+      answer: factorsToString(f),
+      answerType: 'string',
+      tolerance: 0,
+      unitLabel: '',
+      hint: '체계적으로 2, 3, 5, 7, 11... 순서로 나누어 보세요.',
+      explain: `${n} = ${factorsToString(f)}`
+    };
+  }
+});
+
+// 최대공약수 (난이도1)
+T11.push({
+  key: 'gcd_basic',
+  unitId: 'm1-1-1-I-2',
+  difficulty: 1,
+  tags: ['최대공약수'],
+  gen(){
+    const {randInt, gcd} = GenCore;
+    const g = randInt(3,12);
+    const m = randInt(2,8);
+    const n = randInt(2,8);
+    const A = g*m;
+    const B = g*n;
+    const G = gcd(A,B);
+    return {
+      type:'short',
+      question: `${A}와(과) ${B}의 최대공약수를 구하시오.`,
+      answer: String(G),
+      answerType:'number',
+      tolerance:0,
+      unitLabel:'',
+      hint:'공통으로 나누어지는 가장 큰 수를 찾으세요.',
+      explain:`최대공약수는 ${G}입니다.`
+    };
+  }
+});
+
+// 최소공배수 (난이도3)
+T11.push({
+  key: 'lcm_hard',
+  unitId: 'm1-1-1-I-2',
+  difficulty: 3,
+  tags: ['최소공배수'],
+  gen(){
+    const {randInt, gcd, lcm} = GenCore;
+    const a = randInt(12,50);
+    const b = randInt(12,50);
+    const c = randInt(12,50);
+    const L12 = lcm(a,b);
+    const L = lcm(L12, c);
+    return {
+      type:'short',
+      question: `${a}, ${b}, ${c}의 최소공배수를 구하시오.`,
+      answer: String(L),
+      answerType:'number',
+      tolerance:0,
+      unitLabel:'',
+      hint:'두 수씩 최소공배수를 구한 후, 세 번째 수와 다시 구합니다.',
+      explain:`lcm(${a},${b},${c}) = ${L}`
+    };
+  }
+});
+
+// 정수와 유리수 (난이도1)
+T11.push({
+  key:'integer_concept',
+  unitId:'m1-1-1-II-1',
+  difficulty: 1,
+  tags:['정수','개념'],
+  gen(){
+    const {randInt, choice} = GenCore;
+    const questions = [
+      {q: '자연수가 아닌 것은? (보기: 1, 0, -3, 5)', a: choice(['0','-3'])},
+      {q: '정수가 아닌 것은? (보기: -5, 0, 3, 1.5)', a: '1.5'},
+      {q: '음의 정수는? (보기: -7, 0, 5, -2.5)', a: choice(['-7'])},
+    ];
+    const picked = choice(questions);
+    return {
+      type:'short',
+      question: picked.q,
+      answer: picked.a,
+      answerType:'string',
+      tolerance:0,
+      unitLabel:'',
+      hint:'정수는 ..., -2, -1, 0, 1, 2, ... 입니다.',
+      explain:`정답은 ${picked.a}입니다.`
+    };
+  }
+});
+
+// 정수와 유리수의 곱셈/나눗셈 (난이도2)
+T11.push({
+  key:'integer_multiply_divide',
+  unitId:'m1-1-1-II-2',
+  difficulty: 2,
+  tags:['정수','곱셈','나눗셈'],
+  gen(){
+    const {randInt, choice} = GenCore;
+    const op = choice(['×', '÷']);
+    if(op==='×'){
+      const a = randInt(-12,12);
+      const b = randInt(-12,12);
+      const ans = a*b;
+      return {
+        type:'short',
+        question: `${a} × (${b}) = ?`,
+        answer: String(ans),
+        answerType:'number',
+        tolerance:0,
+        unitLabel:'',
+        hint:'부호 규칙: 같은 부호끼리 곱하면 양수, 다른 부호끼리 곱하면 음수',
+        explain:`${a} × ${b} = ${ans}`
+      };
+    } else {
+      const b = randInt(2,12) * choice([1,-1]);
+      const k = randInt(-10,10);
+      const a = b*k;
+      return {
+        type:'short',
+        question: `${a} ÷ (${b}) = ?`,
+        answer: String(k),
+        answerType:'number',
+        tolerance:0,
+        unitLabel:'',
+        hint:'나눗셈도 곱셈과 같은 부호 규칙을 따릅니다.',
+        explain:`${a} ÷ ${b} = ${k}`
+      };
+    }
+  }
+});
+
+// 유리수의 덧셈/뺄셈 (난이도3)
+T11.push({
+  key:'rational_complex',
+  unitId:'m1-1-1-II-2',
+  difficulty: 3,
+  tags:['유리수','복합계산'],
+  gen(){
+    const {randInt} = GenCore;
+    const a = randInt(-15,15);
+    const b = randInt(-15,15);
+    const c = randInt(-15,15);
+    const d = randInt(-15,15);
+    const ans = a + b - c + d;
+    return {
+      type:'short',
+      question: `${a} + (${b}) - (${c}) + (${d}) = ?`,
+      answer: String(ans),
+      answerType:'number',
+      tolerance:0,
+      unitLabel:'',
+      hint:'차례대로 계산하거나, 양수끼리/음수끼리 먼저 더한 후 계산해보세요.',
+      explain:`${a} + ${b} - ${c} + ${d} = ${ans}`
+    };
+  }
+});
+
+// 문자의 사용 (난이도1)
+T11.push({
+  key:'variable_usage',
+  unitId:'m1-1-1-III-1',
+  difficulty: 1,
+  tags:['문자','식'],
+  gen(){
+    const {randInt, choice} = GenCore;
+    const x = randInt(2,9);
+    const a = randInt(2,9);
+    const questions = [
+      {q: `x가 ${x}일 때, ${a}x의 값은?`, a: a*x},
+      {q: `한 개에 ${a}원인 사탕을 x개 사면 총 금액은? (x로 나타내시오)`, a: `${a}x`, type:'string'},
+    ];
+    const picked = choice(questions);
+    return {
+      type:'short',
+      question: picked.q,
+      answer: String(picked.a),
+      answerType: picked.type || 'number',
+      tolerance:0,
+      unitLabel: picked.type==='string' ? '' : '원',
+      hint:'문자는 숫자를 대신하여 식을 간단히 나타냅니다.',
+      explain:`정답은 ${picked.a}입니다.`
+    };
+  }
+});
+
+// 문자의 사용 (난이도2)
+T11.push({
+  key:'variable_expression',
+  unitId:'m1-1-1-III-1',
+  difficulty: 2,
+  tags:['문자','식'],
+  gen(){
+    const {randInt} = GenCore;
+    const a = randInt(2,9);
+    const b = randInt(2,9);
+    const x = randInt(2,5);
+    const ans = a*x + b;
+    return {
+      type:'short',
+      question: `x가 ${x}일 때, ${a}x + ${b}의 값은?`,
+      answer: String(ans),
+      answerType:'number',
+      tolerance:0,
+      unitLabel:'',
+      hint:'먼저 ${a}×${x}를 계산한 후 ${b}를 더하세요.',
+      explain:`${a}×${x} + ${b} = ${a*x} + ${b} = ${ans}`
+    };
+  }
+});
+
+// 일차식의 계산 (난이도1)
+T11.push({
+  key:'linear_expression_add',
+  unitId:'m1-1-1-III-2',
+  difficulty: 1,
+  tags:['일차식','덧셈'],
+  gen(){
+    const {randInt} = GenCore;
+    const a = randInt(2,9);
+    const b = randInt(2,9);
+    const c = randInt(1,9);
+    const d = randInt(1,9);
+    const ansX = a+b;
+    const ansC = c+d;
+    return {
+      type:'short',
+      question: `(${a}x + ${c}) + (${b}x + ${d})를 간단히 하시오. (예: 5x+3)`,
+      answer: `${ansX}x${ansC>=0?'+':''}${ansC}`,
+      answerType:'string',
+      tolerance:0,
+      unitLabel:'',
+      hint:'동류항끼리 계수를 더하세요.',
+      explain:`${a}x + ${b}x = ${ansX}x, ${c} + ${d} = ${ansC}, 답: ${ansX}x+${ansC}`
+    };
+  }
+});
+
+// 일차식의 계산 (난이도2)
+T11.push({
+  key:'linear_expression_subtract',
+  unitId:'m1-1-1-III-2',
+  difficulty: 2,
+  tags:['일차식','뺄셈'],
+  gen(){
+    const {randInt} = GenCore;
+    const a = randInt(3,9);
+    const b = randInt(2,9);
+    const c = randInt(1,9);
+    const d = randInt(1,9);
+    const ansX = a-b;
+    const ansC = c-d;
+    return {
+      type:'short',
+      question: `(${a}x + ${c}) - (${b}x + ${d})를 간단히 하시오.`,
+      answer: `${ansX}x${ansC>=0?'+':''}${ansC}`,
+      answerType:'string',
+      tolerance:0,
+      unitLabel:'',
+      hint:'빼는 식은 부호를 바꿔서 더합니다.',
+      explain:`${a}x - ${b}x = ${ansX}x, ${c} - ${d} = ${ansC}, 답: ${ansX}x${ansC>=0?'+':''}${ansC}`
+    };
+  }
+});
+
+// 방정식의 해 (난이도1)
+T11.push({
+  key:'equation_solution',
+  unitId:'m1-1-1-III-3',
+  difficulty: 1,
+  tags:['방정식','해'],
+  gen(){
+    const {randInt} = GenCore;
+    const x = randInt(-5,10);
+    const a = randInt(2,9);
+    const b = randInt(-10,10);
+    const c = a*x + b;
+    return {
+      type:'short',
+      question: `x = ${x}이 방정식 ${a}x + ${b} = c의 해일 때, c의 값은?`,
+      answer: String(c),
+      answerType:'number',
+      tolerance:0,
+      unitLabel:'',
+      hint:'주어진 x값을 식에 대입하여 c를 구하세요.',
+      explain:`${a}×${x} + ${b} = ${a*x} + ${b} = ${c}`
+    };
+  }
+});
+
+// 일차방정식 풀이 (난이도1)
+T11.push({
+  key:'linear_equation_simple',
+  unitId:'m1-1-1-III-4',
+  difficulty: 1,
+  tags:['일차방정식'],
+  gen(){
+    const {randInt} = GenCore;
+    const x = randInt(-10,10);
+    const a = randInt(2,9);
+    const c = a*x;
+    return {
+      type:'short',
+      question: `${a}x = ${c}를 풀어라.`,
+      answer: String(x),
+      answerType:'number',
+      tolerance:0,
+      unitLabel:'',
+      hint:'양변을 ${a}로 나누세요.',
+      explain:`x = ${c} ÷ ${a} = ${x}`
+    };
+  }
+});
+
+// 일차방정식 풀이 (난이도3)
+T11.push({
+  key:'linear_equation_complex',
+  unitId:'m1-1-1-III-4',
+  difficulty: 3,
+  tags:['일차방정식','괄호'],
+  gen(){
+    const {randInt} = GenCore;
+    const x = randInt(-8,8);
+    const a = randInt(2,6);
+    const b = randInt(2,6);
+    const c = randInt(-10,10);
+    const d = randInt(-10,10);
+    // (a+b)x + c + d = (a+b)*x + c + d
+    const right = (a+b)*x + c + d;
+    return {
+      type:'short',
+      question: `${a}(x + ${c}) + ${b}x = ${right - a*c} (괄호를 먼저 풀고 풀어라)`,
+      answer: String(x),
+      answerType:'number',
+      tolerance:0,
+      unitLabel:'',
+      hint:'괄호를 풀고 동류항끼리 정리한 후, 이항하세요.',
+      explain:`${a}x + ${a*c} + ${b}x = ${right - a*c} → ${a+b}x = ${(a+b)*x} → x = ${x}`
+    };
+  }
+});
+
+// 일차방정식의 활용 (난이도1)
+T11.push({
+  key:'word_problem_basic',
+  unitId:'m1-1-1-III-5',
+  difficulty: 1,
+  tags:['활용','문장제'],
+  gen(){
+    const {randInt} = GenCore;
+    const x = randInt(3,20);
+    const a = randInt(2,5);
+    const total = a*x;
+    return {
+      type:'short',
+      question: `연필을 ${a}자루씩 묶음으로 팔고 있습니다. 총 ${total}자루가 있다면 몇 묶음인가요?`,
+      answer: String(x),
+      answerType:'number',
+      tolerance:0,
+      unitLabel:'묶음',
+      hint:'${a}x = ${total} 형태로 식을 세워보세요.',
+      explain:`${a}x = ${total}, x = ${x}`
+    };
+  }
+});
+
+// 일차방정식의 활용 (난이도2)
+T11.push({
+  key:'word_problem_medium',
+  unitId:'m1-1-1-III-5',
+  difficulty: 2,
+  tags:['활용','문장제'],
+  gen(){
+    const {randInt} = GenCore;
+    const x = randInt(10,50);
+    const a = randInt(500,2000);
+    const b = randInt(100,500);
+    const total = a*x + b;
+    return {
+      type:'short',
+      question: `어떤 물건을 한 개에 ${a}원씩 x개 사고, 배송비 ${b}원을 내서 총 ${total}원을 지불했습니다. x는?`,
+      answer: String(x),
+      answerType:'number',
+      tolerance:0,
+      unitLabel:'개',
+      hint:'${a}x + ${b} = ${total} 형태로 식을 세우세요.',
+      explain:`${a}x = ${total-b}, x = ${x}`
+    };
+  }
+});
+
+// 일차방정식의 활용 (난이도3)
+T11.push({
+  key:'word_problem_hard',
+  unitId:'m1-1-1-III-5',
+  difficulty: 3,
+  tags:['활용','문장제'],
+  gen(){
+    const {randInt} = GenCore;
+    const small = randInt(5,15);
+    const large = randInt(20,40);
+    const total = small + large;
+    const diff = large - small;
+    return {
+      type:'short',
+      question: `두 수의 합이 ${total}이고, 큰 수가 작은 수보다 ${diff}만큼 큽니다. 작은 수는?`,
+      answer: String(small),
+      answerType:'number',
+      tolerance:0,
+      unitLabel:'',
+      hint:'작은 수를 x라 하면, 큰 수는 x+${diff}입니다. x + (x+${diff}) = ${total}',
+      explain:`2x + ${diff} = ${total}, 2x = ${total-diff}, x = ${small}`
+    };
+  }
+});
+
 window.Templates_1_1 = T11;
