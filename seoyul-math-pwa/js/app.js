@@ -116,7 +116,14 @@ function showPractice(){
   $('practiceQuestion').textContent = p.question;
   $('practiceUnit').textContent = p.unitLabel || '';
   $('practiceAnswer').value='';
+  $('practiceAnswer').disabled = false;
   $('practiceAnswer').focus();
+  $('practiceFeedback').textContent = '';
+  
+  // 버튼 상태 초기화
+  $('checkBtn').textContent = '✅ 정답확인';
+  $('checkBtn').disabled = false;
+  $('checkBtn').onclick = checkAnswer;
 }
 
 async function saveWrong(problem, userAnswer, reason){
@@ -151,31 +158,76 @@ async function checkAnswer(){
   const r = judge(p, user);
   practice.total += 1;
 
+  // 버튼 비활성화 (중복 클릭 방지)
+  $('checkBtn').disabled = true;
+  $('practiceAnswer').disabled = true;
+
   if(r.ok){
     practice.correct += 1;
     $('practiceFeedback').textContent = `✅ 정답!\n\n해설: ${p.explain}`;
+    
+    // 정답인 경우: 1.5초 후 자동으로 다음 문제
+    if(practice.idx < practice.probs.length-1){
+      setTimeout(() => {
+        practice.idx += 1;
+        showPractice();
+        $('checkBtn').disabled = false;
+        $('practiceAnswer').disabled = false;
+      }, 1500);
+    } else {
+      // 마지막 문제 완료
+      setTimeout(async () => {
+        const sec = Math.round((Date.now()-practiceStart)/1000);
+        await apiPost('/api/study-log/append', {
+          mode: 'practice',
+          unitId: currentUnit.unitId,
+          difficulty: Number($('difficulty').value),
+          total: practice.total,
+          correct: practice.correct,
+          seconds: sec,
+          fixedDB: !!(fixedDB && fixedDB.meta?.unitId===currentUnit.unitId)
+        });
+        $('practiceFeedback').textContent = `🎉 연습 완료!\n정답: ${practice.correct}/${practice.total}\n시간: ${fmtTime(sec)}\n\n오답은 '오답' 탭에서 확인하세요.`;
+        if(practiceTimerId) clearInterval(practiceTimerId);
+        $('checkBtn').disabled = false;
+        $('practiceAnswer').disabled = false;
+      }, 1500);
+    }
   } else {
     const msg = r.msg ? r.msg : `❌ 오답\n내 답: ${user}\n정답: ${p.answer}${p.unitLabel?(' '+p.unitLabel):''}`;
     $('practiceFeedback').textContent = msg + `\n\n힌트: ${p.hint}\n해설: ${p.explain}`;
     await saveWrong(p, user, '채점 오답');
-  }
-
-  if(practice.idx < practice.probs.length-1){
-    practice.idx += 1;
-    setTimeout(showPractice, 200);
-  } else {
-    const sec = Math.round((Date.now()-practiceStart)/1000);
-    await apiPost('/api/study-log/append', {
-      mode: 'practice',
-      unitId: currentUnit.unitId,
-      difficulty: Number($('difficulty').value),
-      total: practice.total,
-      correct: practice.correct,
-      seconds: sec,
-      fixedDB: !!(fixedDB && fixedDB.meta?.unitId===currentUnit.unitId)
-    });
-    $('practiceFeedback').textContent = `🎉 연습 완료!\n정답: ${practice.correct}/${practice.total}\n시간: ${fmtTime(sec)}\n\n오답은 '오답' 탭에서 확인하세요.`;
-    if(practiceTimerId) clearInterval(practiceTimerId);
+    
+    // 오답인 경우: "다음 문제" 버튼으로 변경
+    if(practice.idx < practice.probs.length-1){
+      $('checkBtn').textContent = '➡️ 다음 문제';
+      $('checkBtn').disabled = false;
+      $('checkBtn').onclick = () => {
+        practice.idx += 1;
+        showPractice();
+        $('checkBtn').textContent = '✅ 정답확인';
+        $('checkBtn').onclick = checkAnswer;
+        $('practiceAnswer').disabled = false;
+      };
+    } else {
+      // 마지막 문제 완료
+      setTimeout(async () => {
+        const sec = Math.round((Date.now()-practiceStart)/1000);
+        await apiPost('/api/study-log/append', {
+          mode: 'practice',
+          unitId: currentUnit.unitId,
+          difficulty: Number($('difficulty').value),
+          total: practice.total,
+          correct: practice.correct,
+          seconds: sec,
+          fixedDB: !!(fixedDB && fixedDB.meta?.unitId===currentUnit.unitId)
+        });
+        $('practiceFeedback').textContent = `🎉 연습 완료!\n정답: ${practice.correct}/${practice.total}\n시간: ${fmtTime(sec)}\n\n오답은 '오답' 탭에서 확인하세요.`;
+        if(practiceTimerId) clearInterval(practiceTimerId);
+        $('checkBtn').disabled = false;
+        $('practiceAnswer').disabled = false;
+      }, 1500);
+    }
   }
 }
 

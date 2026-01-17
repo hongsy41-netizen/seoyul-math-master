@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>테스트 페이지</title>
+</head>
+<body>
+    <h1>서율이 수학 PWA 테스트</h1>
+    <div id="result"></div>
+    
+    <script>
+        // 템플릿 로드 테스트
+        async function test() {
+            const result = document.getElementById('result');
+            
+            // 1. Syllabus 로드 테스트
+            try {
+                const syllabusRes = await fetch('/data/syllabus.json');
+                const syllabus = await syllabusRes.json();
+                result.innerHTML += `<p>✅ Syllabus 로드 성공: ${syllabus.chapters?.length || 0}개 챕터</p>`;
+            } catch(e) {
+                result.innerHTML += `<p>❌ Syllabus 로드 실패: ${e.message}</p>`;
+            }
+            
+            // 2. Concepts 로드 테스트
+            try {
+                const conceptsRes = await fetch('/data/concepts.json');
+                const concepts = await conceptsRes.json();
+                const keys = Object.keys(concepts);
+                result.innerHTML += `<p>✅ Concepts 로드 성공: ${keys.length}개 단원</p>`;
+            } catch(e) {
+                result.innerHTML += `<p>❌ Concepts 로드 실패: ${e.message}</p>`;
+            }
+            
+            // 3. API 테스트
+            try {
+                const wrongRes = await fetch('/api/wrong-notes');
+                const wrongData = await wrongRes.json();
+                result.innerHTML += `<p>✅ API 테스트 성공: 오답 ${wrongData.data?.length || 0}개</p>`;
+            } catch(e) {
+                result.innerHTML += `<p>❌ API 테스트 실패: ${e.message}</p>`;
+            }
+        }
+        
+        test();
+    </script>
+</body>
+</html>
