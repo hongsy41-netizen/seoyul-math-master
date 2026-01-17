@@ -293,36 +293,78 @@ T11.push({
   }
 });
 
-// 정수와 유리수 (난이도3)
+// 정수와 유리수 (난이도3) - 복합 혼합 계산
 T11.push({
-  key:'number_line_comparison',
+  key:'complex_integer_calculation',
   unitId:'m1-1-1-II-1',
   difficulty: 3,
-  tags:['수직선','크기비교'],
+  tags:['복합계산','지수','절댓값'],
   gen(){
     const {randInt, choice} = GenCore;
-    const a = randInt(-10, -1);
-    const b = randInt(1, 10);
-    const c = randInt(-5, 5);
     const scenarios = [
+      // 1. 복합 혼합 계산
       () => {
-        const nums = [a, b, c, 0].sort((x, y) => x - y);
+        const a = choice([-2, -3]);
+        const b = randInt(2, 5);
+        const c = randInt(3, 7);
+        const d = choice([-2, -3, 2, 3]);
+        const exp1 = a * a * a; // a³
+        const bracket = b - (-c); // b - (-c)
+        const div = Math.round(bracket / d * 10) / 10;
+        const abs = Math.abs(randInt(-5, -1) + randInt(6, 10));
+        const result = Math.round((exp1 + div) * abs * 10) / 10;
         return {
-          question: `다음 수를 작은 것부터 순서대로 나열하시오: ${a}, ${b}, ${c}, 0 (예: -5,-3,0,2)`,
-          answer: nums.join(','),
-          hint: '수직선에서 오른쪽에 있을수록 큰 수입니다.',
-          explain: `작은 순서: ${nums.join(', ')}`
+          question: `다음 식을 계산하시오: [${a}³ + {${b} - (${-c})} ÷ ${d}] × |${randInt(-5,-1)} + ${randInt(6,10)}|`,
+          answer: String(result),
+          hint: '순서: 지수 → 괄호 안 → 나눗셈 → 절댓값 → 곱셈',
+          explain: `${a}³ = ${exp1}, {${b} - (${-c})} = ${bracket}, ${bracket} ÷ ${d} = ${div}, 절댓값 계산 후 전체 계산`
         };
       },
+      // 2. 절댓값 복잡식
       () => {
-        const frac1 = choice([-1/2, -1/3, 1/2, 1/3, 2/3]);
-        const frac2 = choice([-2/3, -1/4, 1/4, 3/4]);
-        const bigger = frac1 > frac2 ? frac1 : frac2;
+        const a = randInt(-5, -2);
+        const b = randInt(1, 4);
+        const c = choice([-1, -2, 1, 2]);
+        const abs1 = Math.abs(a - 2*b);
+        const abs2 = Math.abs(b + c);
+        const cSq = c * c;
+        const abs3 = Math.abs(a * c);
+        const abs4 = Math.abs(-b);
+        const result = abs1 - abs2 * cSq + abs3 / abs4;
         return {
-          question: `${frac1}과(와) ${frac2} 중 더 큰 수는?`,
-          answer: String(bigger),
-          hint: '소수로 바꿔서 비교하거나 통분하여 비교하세요.',
-          explain: `${frac1} ${frac1 > frac2 ? '>' : '<'} ${frac2}, 답: ${bigger}`
+          question: `a = ${a}, b = ${b}, c = ${c}일 때, |a - 2b| - |b + c| × c² + |a × c| ÷ |-b|의 값은?`,
+          answer: String(Math.round(result * 10) / 10),
+          hint: '절댓값을 각각 계산한 후, 사칙연산 순서대로 계산하세요.',
+          explain: `|${a} - ${2*b}| = ${abs1}, |${b} + ${c}| = ${abs2}, c² = ${cSq}, |${a} × ${c}| = ${abs3}, |-${b}| = ${abs4}, 답: ${Math.round(result*10)/10}`
+        };
+      },
+      // 3. 조건 만족 정수 찾기
+      () => {
+        const a = randInt(-4, -1);
+        const b = 6 - Math.abs(a); // |a| + |b| = 6
+        const c = (a + b) - 3;
+        const product = a * b * c;
+        return {
+          question: `세 정수 a, b, c가 조건을 만족한다: (1) a × b × c < 0, (2) |a| + |b| = 6, (3) a + b = 2, (4) c는 a+b보다 3 작다. a × b × c의 값은?`,
+          answer: String(product),
+          hint: '조건 (2), (3)으로 a, b를 먼저 구하고, 조건 (4)로 c를 구하세요.',
+          explain: `|a| + |b| = 6이고 a + b = 2이므로, a = ${a}, b = ${b}. c = ${a+b} - 3 = ${c}, 답: ${a} × ${b} × ${c} = ${product}`
+        };
+      },
+      // 4. 수직선 좌표 추론
+      () => {
+        const A = -5;
+        const B = A + 7;
+        const C = (A + B) / 2 - 3;
+        const D = -Math.abs(C);
+        const AC = Math.abs(A - C);
+        const BD = Math.abs(B - D);
+        const sum = AC + BD;
+        return {
+          question: `수직선 위 점 A(-5), B(A보다 7 오른쪽), C(A와 B의 중점에서 3 왼쪽), D(|C의 좌표| = |D의 좌표|인 음수)일 때, 선분 AC와 BD의 길이의 합은?`,
+          answer: String(sum),
+          hint: 'B, C, D의 좌표를 차례로 구한 후, 거리를 계산하세요.',
+          explain: `B = ${B}, C = ${C}, D = ${D}, AC = ${AC}, BD = ${BD}, 합 = ${sum}`
         };
       }
     ];
@@ -331,8 +373,8 @@ T11.push({
       type:'short',
       question: picked.question,
       answer: picked.answer,
-      answerType:'string',
-      tolerance:0,
+      answerType:'number',
+      tolerance:1,
       unitLabel:'',
       hint: picked.hint,
       explain: picked.explain
@@ -381,28 +423,80 @@ T11.push({
   }
 });
 
-// 유리수의 덧셈/뺄셈 (난이도3)
+// 유리수의 덧셈/뺄셈 (난이도3) - 분수 복합 계산
 T11.push({
   key:'rational_complex',
   unitId:'m1-1-1-II-2',
   difficulty: 3,
-  tags:['유리수','복합계산'],
+  tags:['유리수','복합계산','분수'],
   gen(){
-    const {randInt} = GenCore;
-    const a = randInt(-15,15);
-    const b = randInt(-15,15);
-    const c = randInt(-15,15);
-    const d = randInt(-15,15);
-    const ans = a + b - c + d;
+    const {randInt, choice, gcd} = GenCore;
+    const scenarios = [
+      // 1. 분수 복합 사칙연산
+      () => {
+        const a = randInt(1, 5);
+        const b = randInt(2, 6);
+        const c = randInt(1, 4);
+        const d = randInt(2, 5);
+        const e = randInt(1, 3);
+        const f = randInt(2, 4);
+        // a/b + c/d × e/f 계산
+        const mult = (c * e) / (d * f);
+        const result = a/b + mult;
+        const resultRounded = Math.round(result * 100) / 100;
+        return {
+          question: `${a}/${b} + ${c}/${d} × ${e}/${f}의 값은? (소수 둘째자리까지)`,
+          answer: String(resultRounded),
+          hint: '곱셈을 먼저 계산한 후 덧셈을 하세요. 통분이 필요할 수 있습니다.',
+          explain: `${c}/${d} × ${e}/${f} = ${c*e}/${d*f}, ${a}/${b} + ${c*e}/${d*f} = ${resultRounded}`
+        };
+      },
+      // 2. 음수 분수 혼합 계산
+      () => {
+        const a = randInt(-5, -1);
+        const b = randInt(1, 3);
+        const c = randInt(2, 5);
+        const d = randInt(1, 3);
+        const e = randInt(2, 4);
+        const result = a + b/c - d/e;
+        const resultRounded = Math.round(result * 100) / 100;
+        return {
+          question: `${a} + ${b}/${c} - ${d}/${e}의 값은? (소수 둘째자리까지)`,
+          answer: String(resultRounded),
+          hint: '정수를 분수로 바꾸거나, 분수를 소수로 바꿔서 계산하세요.',
+          explain: `${a} + ${b/c} - ${d/e} = ${resultRounded}`
+        };
+      },
+      // 3. 복잡한 대분수 계산
+      () => {
+        const whole1 = randInt(2, 5);
+        const num1 = randInt(1, 3);
+        const den1 = randInt(2, 4);
+        const whole2 = randInt(1, 4);
+        const num2 = randInt(1, 3);
+        const den2 = randInt(2, 4);
+        const frac1 = whole1 + num1/den1;
+        const frac2 = whole2 + num2/den2;
+        const result = frac1 - frac2;
+        const resultRounded = Math.round(result * 100) / 100;
+        return {
+          question: `${whole1}${num1}/${den1} - ${whole2}${num2}/${den2}의 값은? (소수 둘째자리까지)`,
+          answer: String(resultRounded),
+          hint: '대분수를 가분수로 바꾸거나 소수로 바꿔서 계산하세요.',
+          explain: `${whole1}${num1}/${den1} = ${frac1}, ${whole2}${num2}/${den2} = ${frac2}, 차 = ${resultRounded}`
+        };
+      }
+    ];
+    const picked = choice(scenarios)();
     return {
       type:'short',
-      question: `${a} + (${b}) - (${c}) + (${d}) = ?`,
-      answer: String(ans),
+      question: picked.question,
+      answer: picked.answer,
       answerType:'number',
-      tolerance:0,
+      tolerance:0.01,
       unitLabel:'',
-      hint:'차례대로 계산하거나, 양수끼리/음수끼리 먼저 더한 후 계산해보세요.',
-      explain:`${a} + ${b} - ${c} + ${d} = ${ans}`
+      hint: picked.hint,
+      explain: picked.explain
     };
   }
 });
